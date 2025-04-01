@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Coolvetica";
+    src: url("/Fuente/Coolvetica.otf");
+}
+
+@font-face {
+    font-family: "Lined";
+    src: url("/Fuente/Lined.ttf");
+}
+
+body{
+    font-size: 25px;
+    font-family: "Coolvetica";
+}
