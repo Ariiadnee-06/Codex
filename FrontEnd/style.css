@@ -1,14 +1,153 @@
 @font-face {
     font-family: "Coolvetica";
-    src: url("/Fuente/Coolvetica.otf");
+    src: url("./Fuente/Coolvetica.otf");
+    font-display: swap;
 }
-
 @font-face {
     font-family: "Lined";
-    src: url("/Fuente/Lined.ttf");
+    src: url("./Fuente/Lined.ttf");
+    font-display: swap;
 }
 
-body{
-    font-size: 25px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0E021F;
+    font-family: "Lined", sans-serif;
+}
+
+.header {
     font-family: "Coolvetica";
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #0E021F;
+    border-bottom: 0.5px solid #FFF;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.nav_logo {
+    color: #FFF;
+    font-size: 35px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.4s;
+}
+
+.nav_logo:hover {
+    color: beige;
+}
+
+.nav_menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(14, 2, 31, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.4s ease-in-out;
+}
+
+.nav_menu.show_menu {
+    left: 0;
+}
+
+.nav_list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav_list a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav_list a:hover {
+    color: beige;
+}
+
+.nav_list img {
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.nav_list img:hover {
+    transform: scale(1.1);
+}
+
+.nav_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.nav_toggle {
+    display: none;
+    cursor: pointer;
+    margin: 0px 30px 20px 0px;
+    width: 20px;
+    height: 20px;
+}
+
+.nav_toggle img{
+    height: 40px;
+}
+
+.nav_close img{
+    height: 40px;
+}
+
+@media screen and (max-width: 1150px) {
+    .header {
+        height: 60px; 
+        padding: 5px 15px;
+    }
+
+    .nav {
+        height: 50px;
+    }
+
+    .nav_logo {
+        font-size: 35px; 
+    }
+
+    .nav_list img {
+        height: 40px; 
+    }
+
+    .nav_list {
+        gap: 0.5rem;
+    }
+
+    .nav_toggle {
+        display: block;
+        width: 25px;
+        height: 25px;
+    }
 }
