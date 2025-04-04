@@ -54,7 +54,7 @@
                     <div class="Img">
                         <img src="./Imagenes/Mobile note list-pana.png" alt="">
 
-                        <button class="click_Aqui" ><a href="#">Te ayudare con eso</a></button>
+                        <button class="click_Aqui" id="openNew">Te ayudare con eso</button>
                     </div>
                     
                 </div>
@@ -64,12 +64,99 @@
                 <div class="Imagen_Container">
                     <div class="Img">
                         <img src="./Imagenes/Mobile UI-UX-amico.png" alt="">
-                        <button class="click_Aqui" ><a href="#">Sigamos con el proceso</a></button>
+                        <button class="click_Aqui" id="openOld">Sigamos con el proceso</button>
                     </div>
                     
                 </div>
             </div>
         </section>
+
+        <!--Formulario de openNew-->
+        <div id="form_modal" class="modal hidden">
+            <div class="modal_content">
+            <span id="close_modal" class="close">&times;</span>
+          
+              <div class="modal_body">
+                <div class="image_side">
+                    <img src="/FrontEnd/Imagenes/image-removebg-preview (5).png" alt="">
+                </div>
+          
+                <div class="form_side">
+                  <h2>Te ayudamos desde cero</h2>
+                  <form>
+                    <label for="uso_computadora">¿Para qué necesitas la computadora?</label><br>
+                        <select id="uso_computadora" name="uso_computadora" required>
+                            <option value="">-- Selecciona una opción --</option>
+                            <option value="trabajo">Trabajar</option>
+                            <option value="estudio">Estudiar</option>
+                            <option value="jugar">Jugar</option>
+                            <option value="diseno">Diseño gráfico</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    <div id="campo_otro" style="display: none; margin-top: 10px;">
+                        <label for="otro_uso">Cual es el uso que le quieres dar: </label><br>
+                        <input type="text" id="otro_uso" name="otro_uso">
+                    </div>
+          
+                    <label for="uso_computadora">¿Que tipo de equipo prefieres?</label><br>
+                        <select id="uso_computadora" name="uso_computadora" required>
+                            <option value="">-- Selecciona una opción --</option>
+                            <option value="PC">Computador de Mesa</option>
+                            <option value="Portatil">Portatil</option>
+                        </select>
+          
+                    <div class="button">
+                        <button type="submit">Recominedame</button>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--Formulario de OpenOld-->
+          <div id="form_modalOld" class="modal hidden">
+            <div class="modal_content">
+            <span id="close_modalOld" class="close">&times;</span>
+          
+              <div class="modal_body">
+                <div class="image_side">
+                    <img src="/FrontEnd/Imagenes/image-removebg-preview (5).png" alt="">
+                </div>
+          
+                <div class="form_side">
+                  <h2>Cuentanos tu idea</h2>
+                  <form>
+                    <label for="otro_uso">¿Que computadora tenias en mente? </label><br>
+                    <input type="text" id="otro_uso" name="otro_uso">
+
+                    <label for="uso_computadora">¿Por que tenias en mente esta computadora?</label><br>
+                        <select id="uso_computadora" name="uso_computadora" required>
+                            <option value="">-- Selecciona una opción --</option>
+                            <option value="trabajo">Trabajar</option>
+                            <option value="estudio">Estudiar</option>
+                            <option value="jugar">Jugar</option>
+                            <option value="diseno">Diseño gráfico</option>
+                            <option value="otros">Otros</option>
+                        </select>
+          
+                    <label for="uso_computadora">¿Que tipo de equipo prefieres?</label><br>
+                        <select id="uso_computadora" name="uso_computadora" required>
+                            <option value="">-- Selecciona una opción --</option>
+                            <option value="PC">Computador de Mesa</option>
+                            <option value="Portatil">Portatil</option>
+                        </select>
+          
+                    <div class="button">
+                        <button type="submit">Recominedame</button>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
     </main>
 
     <!-- Footer -->
@@ -81,7 +168,7 @@
       </div>
   
       <div class="footer-section-links">
-        <h2>Enlaces rápidos</h2>
+        <h2>Conexiones</h2>
         <ul>
           <li><a href="#">Inicio</a></li>
           <li><a href="#">Servicios</a></li>
