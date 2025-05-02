@@ -1,0 +1,138 @@
+﻿/* Estilos del Form de Login y Registro by Lady Johana Torres Rios ;) 
+    2025
+*/
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0E021F;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-wrapper {
+    display: flex;
+    background-color: #1a0932;
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.auth-left {
+    flex: 1;
+    background-color: #0E021F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+    .auth-left .logo {
+        max-width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .auth-left h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .auth-left p {
+        font-size: 16px;
+        color: #ccc;
+    }
+
+.auth-right {
+    flex: 1;
+    padding: 40px;
+    background-color: #fff;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.auth-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+    .auth-tabs button {
+        background: none;
+        border: none;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 10px;
+        border-bottom: 2px solid transparent;
+        color: #444;
+        transition: border-bottom 0.3s;
+    }
+
+        .auth-tabs button:hover,
+        .auth-tabs .active-tab {
+            border-bottom: 2px solid #0E021F;
+            color: #0E021F;
+        }
+
+.form {
+    display: none;
+    flex-direction: column;
+}
+
+.active-form {
+    display: flex;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #0E021F;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    button:hover {
+        background-color: #240f4b;
+    }
+
+.message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    display: none;
+    text-align: center;
+}
+
+    .message.success {
+        background-color: #d4edda;
+        color: #155724;
+        display: block;
+    }
+
+    .message.error {
+        background-color: #f8d7da;
+        color: #721c24;
+        display: block;
+    }

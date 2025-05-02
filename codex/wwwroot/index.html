@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" href="./Imagenes/Codex-Logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="/js/main.js"></script>
+    <title>Codex | Inicio</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav_container">
+            <a href="#" class="nav_logo">Codex</a>
+    
+            <div class="nav_menu" id="nav_menu">
+                <div class="nav_close" id="nav_close">
+                    <img src="Imagenes/circulo-marca-x (1).png" alt="Cerrar">
+                </div>
+    
+                <ul class="nav_list">
+                    <li>
+                        <a href="#" class="nav_link">
+                            <img src="Imagenes/carro-de-la-carretilla.png" alt="Carro" class="nav_icon">
+                            <span class="nav_text">Compra</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav_link">
+                            <img src="Imagenes/me-gusta.png" alt="Me gusta" class="nav_icon">
+                            <span class="nav_text">Favoritos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav_link">
+                            <img src="Imagenes/usuario-extranjero (1).png" alt="Usuario" class="nav_icon">
+                            <span class="nav_text">Iniciar Sesión</span>
+                        </a>
+                    </li>
+                </ul>
+                
+            </div>
+    
+            <div class="nav_toggle" id="nav_toggle">
+                <img src="Imagenes/menu (2).png" alt="Menú">
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="container">
+            <div class="con1">
+                <h1 class="Titulo">Guiame desde cero</h1>
+                <div class="Imagen_Container">
+                    <div class="Img">
+                        <img src="./Imagenes/Mobile note list-pana.png" alt="">
+
+                        <button class="click_Aqui" id="openNew">Te ayudare con eso</button>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="con2">
+                <h1 class="Titulo">Ya tengo algo en mente</h1>
+                <div class="Imagen_Container">
+                    <div class="Img">
+                        <img src="./Imagenes/Mobile UI-UX-amico.png" alt="">
+                        <button class="click_Aqui" id="openOld">Sigamos con el proceso</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!--Formulario de openNew-->
+        <div id="form_modal" class="modal hidden">
+            <div class="modal_content">
+            <span id="close_modal" class="close">&times;</span>
+          
+              <div class="modal_body">
+                <div class="image_side">
+                    <img src="./Imagenes/image-removebg-preview (5).png" alt="">
+                </div>
+          
+                <div class="form_side">
+                  <h2>Te ayudamos desde cero</h2>
+                  <form>
+                    <label for="uso_computadora">¿Para qué necesitas la computadora?</label><br>
+                        <select id="uso_computadora" name="uso_computadora" required>
+                            <option value="">-- Selecciona una opción --</option>
+                            <option value="trabajo">Trabajar</option>
+                            <option value="estudio">Estudiar</option>
+                            <option value="jugar">Jugar</option>
+                            <option value="diseno">Diseño gráfico</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    <div id="campo_otro" style="display: none; margin-top: 10px;">
+                        <label for="otro_uso">Cual es el uso que le quieres dar: </label><br>
+                        <input type="text" id="otro_uso" name="otro_uso">
+                    </div>
+          
+                    <label for="uso_computadora">¿Que tipo de equipo prefieres?</label><br>
+                        <select id="uso_computadora" name="uso_computadora" required>
+                            <option value="">-- Selecciona una opción --</option>
+                            <option value="PC">Computador de Mesa</option>
+                            <option value="Portatil">Portatil</option>
+                        </select>
+          
+                    <div class="button">
+                        <button type="submit">Recominedame</button>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--Formulario de OpenOld-->
+          <div id="form_modalOld" class="modal hidden">
+            <div class="modal_content">
+            <span id="close_modalOld" class="close">&times;</span>
+          
+              <div class="modal_body">
+                <div class="image_side">
+                    <img src="./Imagenes/image-removebg-preview (5).png" alt="">
+                </div>
+          
+                <div class="form_side">
+                  <h2>Cuentanos tu idea</h2>
+                  <form>
+                    <label for="otro_uso">¿Que computadora tenias en mente? </label><br>
+                    <input type="text" id="otro_uso" name="otro_uso">
+
+                    <label for="uso_computadora">¿Por que tenias en mente esta computadora?</label><br>
+                        <select id="uso_computadora" name="uso_computadora" required>
+                            <option value="">-- Selecciona una opción --</option>
+                            <option value="trabajo">Trabajar</option>
+                            <option value="estudio">Estudiar</option>
+                            <option value="jugar">Jugar</option>
+                            <option value="diseno">Diseño gráfico</option>
+                            <option value="otros">Otros</option>
+                        </select>
+          
+                    <label for="uso_computadora">¿Que tipo de equipo prefieres?</label><br>
+                        <select id="uso_computadora" name="uso_computadora" required>
+                            <option value="">-- Selecciona una opción --</option>
+                            <option value="PC">Computador de Mesa</option>
+                            <option value="Portatil">Portatil</option>
+                        </select>
+          
+                    <div class="button">
+                        <button type="submit">Recominedame</button>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+    </main>
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section-about">
+        <h2>Mi Sitio Web</h2>
+        <p>Este es un e-commerce de recomendación de computadores y portatiles de acuerdo a la informacion que nos de nuestro usuario</p>
+      </div>
+  
+      <div class="footer-section-links">
+        <h2>Conexiones</h2>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Sobre nosotros</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section-contact">
+        <h2>Enlaces</h2>
+            <li><a href="https://github.com/Ariiadnee-06/Codex.git">GitHub</a></li>
+            <li><a href="https://samuelmachado1806sm.atlassian.net/jira/software/projects/CODEX/summary">Jira</a></li>
+            <li><p>IUPB - Ingeniería de Software</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 Codex | Todos los derechos reservados</p>
+    </div>
+  </footer>
+    <script src="main.js"></script>
+</body>
+</html>

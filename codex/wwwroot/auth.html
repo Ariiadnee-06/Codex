@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Codex | Inicia sesión</title>
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-left">
+            <img src="/Imagenes/logo.png" alt="Codex Logo" class="logo">
+            <h1>Bienvenido a Codex</h1>
+            <p>Explora recomendaciones personalizadas para tu próximo equipo.</p>
+        </div>
+
+        <div class="auth-right">
+            <div class="auth-tabs">
+                <button id="show-login" class="active-tab">Iniciar Sesión</button>
+                <button id="show-register">Registrarse</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-form" class="form active-form">
+                <h2>Inicia sesión</h2>
+                <input type="email" id="login-email" placeholder="Correo">
+                <input type="password" id="login-password" placeholder="Contraseña">
+                <div id="login-message" class="message"></div>
+                <button onclick="login()">Entrar</button>
+            </div>
+
+            <!-- Register Form -->
+            <div id="register-form" class="form hidden">
+                <h2>Crear una cuenta</h2>
+                <input type="text" id="register-nombre" placeholder="Nombre">
+                <input type="text" id="register-apellido" placeholder="Apellido">
+                <input type="email" id="register-correo" placeholder="Correo">
+                <input type="password" id="register-password" placeholder="Contraseña">
+                <div id="register-message" class="message"></div>
+                <button onclick="register()">Registrarme</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+</body>
+</html>

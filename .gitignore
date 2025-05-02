@@ -1,0 +1,15 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build
+bin/
+obj/
+
+# ASP.NET secrets
+secrets.json
+
+# Sistema
+*.DS_Store
+Thumbs.db
