@@ -24,6 +24,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseDefaultFiles(); //  Busca y carga index.html automáticamente
 app.UseStaticFiles();
 
 app.UseRouting();

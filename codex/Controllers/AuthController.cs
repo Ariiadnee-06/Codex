@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Codex.Data;
+﻿using Codex.Data;
 using Codex.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Codex.Controllers
 {
@@ -25,20 +25,55 @@ namespace Codex.Controllers
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();
 
-            return Ok(new { mensaje = "Usuario registrado exitosamente." });
+            // Retornar datos del usuario para login automático
+            return Ok(new
+            {
+                mensaje = "Usuario registrado exitosamente.",
+                usuario = new
+                {
+                    usuario.ID_Usuario,
+                    usuario.Nombre,
+                    usuario.Apellido,
+                    usuario.Correo,
+                    usuario.Rol
+                }
+            });
         }
 
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] Usuario usuario)
+        public IActionResult Login([FromBody] LoginDTO login)
         {
-            var dbUser = _context.Usuarios.FirstOrDefault(u => u.Correo == usuario.Correo);
-            if (dbUser == null) return Unauthorized("Correo no encontrado.");
+            Console.WriteLine($"📥 Recibido Correo: {login?.Correo}");
+            Console.WriteLine($"📥 Recibido Contraseña: {login?.ContraseñaHash}");
 
-            bool valido = BCrypt.Net.BCrypt.Verify(usuario.ContraseñaHash, dbUser.ContraseñaHash);
-            if (!valido) return Unauthorized("Contraseña incorrecta.");
+            if (login == null || string.IsNullOrWhiteSpace(login.Correo) || string.IsNullOrWhiteSpace(login.ContraseñaHash))
+                return BadRequest(new { mensaje = "Faltan datos en la solicitud." });
 
-            return Ok(new { mensaje = "Login exitoso", usuario = dbUser });
+            var dbUser = _context.Usuarios.FirstOrDefault(u => u.Correo == login.Correo);
+            if (dbUser == null)
+                return Unauthorized(new { mensaje = "Correo no encontrado." });
+
+            bool valido = BCrypt.Net.BCrypt.Verify(login.ContraseñaHash, dbUser.ContraseñaHash);
+            if (!valido)
+                return Unauthorized(new { mensaje = "Contraseña incorrecta." });
+
+            return Ok(new
+            {
+                mensaje = "Login exitoso",
+                usuario = new
+                {
+                    dbUser.ID_Usuario,
+                    dbUser.Nombre,
+                    dbUser.Apellido,
+                    dbUser.Correo,
+                    dbUser.Rol
+                }
+            });
         }
+
+
+
+
     }
 }

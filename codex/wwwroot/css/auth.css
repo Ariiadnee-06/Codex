@@ -2,16 +2,50 @@
     2025
 */
 
+
+:root {
+    --main-purple: #0E021F;
+    --dark-purple: #15042a;
+    --accent: #ffffff;
+}
+
+
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #0E021F;
-    color: white;
     height: 100vh;
+    background: linear-gradient(135deg, var(--main-purple), var(--dark-purple));
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+input:focus {
+    outline: none;
+    border: 2px solid var(--main-purple);
+    box-shadow: 0 0 5px rgba(142, 68, 173, 0.5);
+    transition: 0.3s;
+}
+
 
 .auth-wrapper {
     display: flex;
@@ -25,7 +59,7 @@ body {
 
 .auth-left {
     flex: 1;
-    background-color: #0E021F;
+    background-color: #281147;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,7 +147,8 @@ button {
 }
 
     button:hover {
-        background-color: #240f4b;
+        background-color: #281147;
+        color: #ffff;
     }
 
 .message {
@@ -136,3 +171,8 @@ button {
         color: #721c24;
         display: block;
     }
+
+
+@media (max-width: 768px) {
+}
+ 

@@ -13,10 +13,10 @@ async function register() {
     messageBox.style.display = "none";
 
     const data = {
-        nombre: document.getElementById('register-nombre').value,
-        apellido: document.getElementById('register-apellido').value,
-        correo: document.getElementById('register-correo').value,
-        contraseñaHash: document.getElementById('register-password').value
+        nombre: document.getElementById('register-nombre').value.trim(),
+        apellido: document.getElementById('register-apellido').value.trim(),
+        correo: document.getElementById('register-correo').value.trim(),
+        contraseñaHash: document.getElementById('register-password').value.trim()
     };
 
     const response = await fetch('/api/auth/register', {
@@ -35,29 +35,80 @@ async function register() {
     messageBox.textContent = result.mensaje || result;
     messageBox.className = 'message ' + (response.ok ? 'success' : 'error');
     messageBox.style.display = "block";
+
+    // ✅ Si fue exitoso, guarda sesión y redirige
+    if (response.ok && result.usuario) {
+        localStorage.setItem('usuario', JSON.stringify(result.usuario));
+        console.log("🟢 Usuario registrado y logueado automáticamente:", result.usuario);
+        setTimeout(() => {
+            window.location.href = "/index.html";
+        }, 1500);
+    }
 }
+
 
 
 async function login() {
+    const correo = document.getElementById('login-email').value.trim();
+    const contraseña = document.getElementById('login-password').value.trim();
+
+    if (!correo || !contraseña) {
+        mostrarMensaje("login-message", "Por favor completa todos los campos.", false);
+        return;
+    }
+
     const data = {
-        correo: document.getElementById('login-email').value,
-        contraseñaHash: document.getElementById('login-password').value
+        Correo: correo,
+        ContraseñaHash: contraseña
     };
 
-    const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-    });
+    console.log("📤 Enviando a backend:", data);
 
-    const result = await response.json();
-    if (response.ok) {
-        alert("Bienvenido " + result.usuario.nombre);
-        // Aquí se guardan datos en localStorage o redirigir
-    } else {
-        alert(result);
+    try {
+        const response = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        let result;
+        try {
+            result = await response.json();
+        } catch {
+            result = { mensaje: "Respuesta inesperada del servidor." };
+        }
+
+        console.log("📥 Respuesta recibida del backend:", result);
+
+        mostrarMensaje("login-message", result.mensaje || result, response.ok);
+
+        if (response.ok && result.usuario) {
+            // Guarda usuario exactamente como lo entrega el backend
+            localStorage.setItem('usuario', JSON.stringify(result.usuario));
+            console.log("✅ Usuario guardado en localStorage:", result.usuario);
+
+            setTimeout(() => {
+                window.location.href = "/index.html";
+            }, 1500);
+        }
+
+    } catch (error) {
+        console.error("❌ Error en login:", error);
+        mostrarMensaje("login-message", "Error de conexión con el servidor.", false);
     }
 }
+
+
+function mostrarMensaje(id, mensaje, exito) {
+    const msgBox = document.getElementById(id);
+    msgBox.textContent = mensaje;
+    msgBox.className = 'message ' + (exito ? 'success' : 'error');
+    msgBox.style.display = "block";
+}
+
+
+
+
 
 // para el tab activo
 document.getElementById('show-login').onclick = () => {

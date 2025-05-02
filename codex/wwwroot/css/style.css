@@ -1,13 +1,13 @@
 /* ------------------ Fuentes ------------------ */
 @font-face {
     font-family: "Coolvetica";
-    src: url("./Fuente/Coolvetica Rg.otf");
+    src: url("../Fuente/Coolvetica Rg.otf");
     font-display: swap;
 }
 
 @font-face {
     font-family: "Lined";
-    src: url("./Fuente/Lined.ttf");
+    src: url("../Fuente/Lined.ttf");
     font-display: swap;
 }
 * {
@@ -20,6 +20,11 @@ body {
     background-color: #0E021F;
     font-family: "Lined", sans-serif;
 }
+
+.hidden {
+    display: none !important;
+}
+
 
 /* ------------------ Header ------------------ */
 .header {
