@@ -36,7 +36,7 @@ async function register() {
     messageBox.className = 'message ' + (response.ok ? 'success' : 'error');
     messageBox.style.display = "block";
 
-    // ✅ Si fue exitoso, guarda sesión y redirige
+    //  Si es  exitoso, guarda sesión y redirige (NO TOCAR PLIS BY LADY)
     if (response.ok && result.usuario) {
         localStorage.setItem('usuario', JSON.stringify(result.usuario));
         console.log("🟢 Usuario registrado y logueado automáticamente:", result.usuario);
