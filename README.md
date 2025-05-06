@@ -5,6 +5,7 @@ Integrantes:
 °Lady Johana Torres Rios
 °Juan Sebastian Henao Posada
 °Ariadne Elena Castañeda Ramos
+°Juan Pablo Velasquez
 Horario:
 Viernes: 12:00-2:00 
 Sabado: 8:00 - 10:00 
