@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" href="./Imagenes/Codex-Logo.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="admin.css">
+    <title>Codex | Panel de Administración</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav_container">
+            <a href="index.html" class="nav_logo">Codex</a>
+    
+            <div class="nav_menu" id="nav_menu">
+                <div class="nav_close" id="nav_close">
+                    <img src="Imagenes/circulo-marca-x (1).png" alt="Cerrar">
+                </div>
+    
+                <ul class="nav_list">
+                    <li>
+                        <a href="index.html" class="nav_link">
+                            <img src="Imagenes/home.png" alt="Inicio" class="nav_icon">
+                            <span class="nav_text">Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav_link active">
+                            <img src="Imagenes/dashboard.png" alt="Panel" class="nav_icon">
+                            <span class="nav_text">Panel Admin</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav_link">
+                            <img src="Imagenes/usuario-extranjero (1).png" alt="Usuario" class="nav_icon">
+                            <span class="nav_text">Mi Cuenta</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="nav_toggle" id="nav_toggle">
+                <img src="Imagenes/menu (2).png" alt="Menú">
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-main">
+        <section class="admin-container">
+            <div class="admin-header">
+                <h1 class="Titulo">Panel de Administración</h1>
+                <button class="admin-button" id="openAddModal">Agregar Computador</button>
+            </div>
+
+            <div class="admin-tabs">
+                <button class="tab-button active" data-tab="computadores">Computadores</button>
+                <button class="tab-button" data-tab="usuarios">Usuarios</button>
+                <button class="tab-button" data-tab="ventas">Ventas</button>
+            </div>
+
+            <div class="admin-content active" id="computadores-content">
+                <div class="admin-filters">
+                    <div class="search-box">
+                        <input type="text" id="search-computer" placeholder="Buscar por nombre">
+                        <button class="search-button">Buscar</button>
+                    </div>
+                    <div class="filter-options">
+                        <select id="filter-category">
+                            <option value="">Todas las categorías</option>
+                            <option value="trabajo">Trabajo</option>
+                            <option value="estudio">Estudio</option>
+                            <option value="juegos">Juegos</option>
+                            <option value="diseno">Diseño</option>
+                        </select>
+                        <select id="filter-type">
+                            <option value="">Todos los tipos</option>
+                            <option value="PC">PC</option>
+                            <option value="Portatil">Portátil</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Tipo</th>
+                                <th>Categoría</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Destacado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="computers-table-body">
+                            <!-- Los datos se cargarán dinámicamente via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button class="pagination-button" id="prev-page">Anterior</button>
+                    <span class="page-info">Página <span id="current-page">1</span> de <span id="total-pages">5</span></span>
+                    <button class="pagination-button" id="next-page">Siguiente</button>
+                </div>
+            </div>
+
+            <div class="admin-content" id="usuarios-content">
+                <div class="placeholder-message">
+                    <h2>Gestión de Usuarios</h2>
+                    <p>Panel de gestión de usuarios en desarrollo.</p>
+                </div>
+            </div>
+            
+            <div class="admin-content" id="ventas-content">
+                <div class="placeholder-message">
+                    <h2>Gestión de Ventas</h2>
+                    <p>Panel de gestión de ventas en desarrollo.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para agregar/editar computador -->
+    <div id="computer-modal" class="modal hidden">
+        <div class="modal_content">
+            <span id="close-computer-modal" class="close">&times;</span>
+            <h2 id="modal-title" style="padding: 20px 20px 0 20px; color: white; font-family: 'Coolvetica', sans-serif; font-weight: lighter;">Agregar Nuevo Computador</h2>
+            <div class="modal_body">
+                <div class="image_side">
+                    <img src="./Imagenes/computer-illustration.png" alt="Ilustración de computador">
+                    <div class="preview-container">
+                        <div id="image-preview"></div>
+                    </div>
+                </div>
+          
+                <div class="form_side">
+                    <form id="computer-form">
+                        <input type="hidden" id="computer-id">
+                      
+                        <label for="nombre">Nombre del Computador</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                      
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" name="descripcion" required></textarea>
+                      
+                        <label for="tipo">Tipo</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="">-- Selecciona una opción --</option>
+                            <option value="PC">Computador de Mesa</option>
+                            <option value="Portatil">Portátil</option>
+                        </select>
+                      
+                        <label for="categoria">Categoría</label>
+                        <select id="categoria" name="categoria" required>
+                            <option value="">-- Selecciona una opción --</option>
+                            <option value="trabajo">Trabajo</option>
+                            <option value="estudio">Estudio</option>
+                            <option value="juegos">Juegos</option>
+                            <option value="diseno">Diseño</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                      
+                        <label for="precio">Precio ($)</label>
+                        <input type="number" id="precio" name="precio" min="0" step="0.01" required>
+                      
+                        <label for="stock">Stock</label>
+                        <input type="number" id="stock" name="stock" min="0" required>
+                      
+                        <label for="imagen">Imagen URL</label>
+                        <input type="text" id="imagen" name="imagen" placeholder="URL de la imagen">
+                      
+                        <label for="especificaciones">Especificaciones Técnicas</label>
+                        <textarea id="especificaciones" name="especificaciones" placeholder="Ingrese las especificaciones en formato JSON o texto"></textarea>
+                      
+                        <div class="destacado-container">
+                            <label for="destacado" class="checkbox-label">
+                                <input type="checkbox" id="destacado" name="destacado">
+                                Producto Destacado
+                            </label>
+                        </div>
+                      
+                        <div class="button">
+                            <button type="submit" id="save-computer">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación de eliminación -->
+    <div id="delete-confirmation-modal" class="modal hidden">
+        <div class="modal_content delete-modal-content">
+            <span id="close-delete-modal" class="close">&times;</span>
+            <h2>Confirmar Eliminación</h2>
+            <p>¿Estás seguro de que deseas eliminar este computador? Esta acción no se puede deshacer.</p>
+            <div class="delete-modal-buttons">
+                <button id="cancel-delete" class="cancel-button">Cancelar</button>
+                <button id="confirm-delete" class="confirm-button">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section-about">
+                <h2>Codex</h2>
+                <p>Este es un e-commerce de recomendación de computadores y portatiles de acuerdo a la informacion que nos de nuestro usuario</p>
+            </div>
+        
+            <div class="footer-section-links">
+                <h2>Conexiones</h2>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer-section-contact">
+                <h2>Enlaces</h2>
+                <ul>
+                    <li><a href="https://github.com/Ariiadnee-06/Codex.git">GitHub</a></li>
+                    <li><a href="https://samuelmachado1806sm.atlassian.net/jira/software/projects/CODEX/summary">Jira</a></li>
+                    <li><p>IUPB - Ingeniería de Software</p></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Codex | Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html> 

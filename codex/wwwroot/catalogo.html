@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Codex | Catálogo</title>
+  <link rel="icon" href="./Imagenes/Codex-Logo.png">
+  <link rel="stylesheet" href="catalogo.css" />
+  <link rel="stylesheet" href="/css/header.css">
+</head>
+<body>
+  <script src="/js/main.js"></script>
+  <!-- Encabezado -->
+  <header class="header" id="header">
+    <nav class="nav_container">
+        <a href="#" class="nav_logo">Codex</a>
+        <span id="user-name"></span>
+
+        <div class="nav_menu" id="nav_menu">
+            <div class="nav_close" id="nav_close">
+                <img src="Imagenes/circulo-marca-x (1).png" alt="Cerrar">
+            </div>
+
+            <ul class="nav_list">
+                <li>
+                    <a href="#" class="nav_link">
+                        <img src="Imagenes/carro-de-la-carretilla.png" alt="Carro" class="nav_icon">
+                        <span class="nav_text">Compra</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav_link">
+                        <img src="Imagenes/me-gusta.png" alt="Me gusta" class="nav_icon">
+                        <span class="nav_text">Favoritos</span>
+                    </a>
+                </li>
+
+              <!----- Cerrar Sesión NAVBAR-->
+                <li id="logout-li" class="hidden">
+                    <a href="#" id="logout-btn" class="nav_link">
+                        <img src="Imagenes/cerrar-sesion.png" alt="Logout" class="nav_icon">
+                        <span class="nav_text">Cerrar sesión</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="#" class="nav_link">
+                        <img src="Imagenes/usuario-extranjero (1).png" alt="Usuario" class="nav_icon">
+                        <span class="nav_text">Iniciar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="nav_toggle" id="nav_toggle">
+            <img src="Imagenes/menu (2).png" alt="Menú">
+        </div>
+    </nav>
+</header>
+
+  <!-- Catálogo de Productos -->
+  <main class="catalogo-container" id="catalogo">
+    <!--Aquí se insertan desde la BD -->
+  </main>
+  
+
+  <!-- Botón flotante -->
+  <div class="asistente-boton" id="abrirAsistente">💬</div>
+
+  <!-- Asistente flotante -->
+  <div class="asistente-flotante hidden" id="asistenteFlotante">
+    <div class="asistente-header">
+      <span>💻 Codex Asistente</span>
+      <button id="cerrarAsistente">×</button>
+    </div>
+    <div class="asistente-mensaje">
+      <p>
+        Este es el catálogo completo de nuestros vendedores y el stock disponible.  
+        <br><br>
+        Si deseas tu recomendación perfecta, llena el formulario y te ayudaremos a elegir tu computadora ideal. 💜
+      </p>
+      <a href="/index.html#form_modal" class="asistente-btn">Ir al recomendador</a>
+    </div>
+  </div>
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section-about">
+            <h2>Mi Sitio Web</h2>
+            <p>Este es un e-commerce de recomendación de computadores y portatiles de acuerdo a la informacion que nos de nuestro usuario</p>
+        </div>
+
+        <div class="footer-section-links">
+            <h2>Conexiones</h2>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Sobre nosotros</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section-contact">
+            <h2>Enlaces</h2>
+            <li><a href="https://github.com/Ariiadnee-06/Codex.git">GitHub</a></li>
+            <li><a href="https://samuelmachado1806sm.atlassian.net/jira/software/projects/CODEX/summary">Jira</a></li>
+            <li><p>IUPB - Ingeniería de Software</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Codex | Todos los derechos reservados</p>
+    </div>
+</footer>
+<script src="/js/main.js"></script>
+
+  <script>
+    const abrirAsistente = document.getElementById('abrirAsistente');
+    const cerrarAsistente = document.getElementById('cerrarAsistente');
+    const asistenteFlotante = document.getElementById('asistenteFlotante');
+
+    // Mostrar asistente automáticamente con animación
+    window.addEventListener('load', () => {
+      asistenteFlotante.classList.remove('hidden');
+      asistenteFlotante.classList.add('slide-in');
+      abrirAsistente.style.display = 'none';
+
+      setTimeout(() => {
+        asistenteFlotante.classList.remove('slide-in');
+        asistenteFlotante.classList.add('slide-out');
+        setTimeout(() => {
+          asistenteFlotante.classList.add('hidden');
+          asistenteFlotante.classList.remove('slide-out');
+          abrirAsistente.style.display = 'block';
+        }, 500); // duracion animación out
+      }, 5000); // mostrar durante 5s
+    });
+
+    abrirAsistente.addEventListener('click', () => {
+      asistenteFlotante.classList.remove('hidden');
+      asistenteFlotante.classList.add('slide-in');
+      abrirAsistente.style.display = 'none';
+    });
+
+    cerrarAsistente.addEventListener('click', () => {
+      asistenteFlotante.classList.add('slide-out');
+      setTimeout(() => {
+        asistenteFlotante.classList.add('hidden');
+        asistenteFlotante.classList.remove('slide-out');
+        abrirAsistente.style.display = 'block';
+      }, 500);
+    });
+  </script>
+
+  <!--- Inicio del codigo para conectar a la BD -->
+
+  <script>
+    fetch('/api/productos')
+      .then(res => res.json())
+      .then(productos => {
+        const catalogo = document.getElementById('catalogo');
+        catalogo.innerHTML = '';
+  
+        productos.forEach(p => {
+          const productoHTML = `
+            <div class="producto">
+              <img src="${p.imagenUrl}" alt="${p.nombre}">
+              <p>${p.nombre}</p>
+              <span class="fav-icon">❤</span>
+            </div>`;
+          catalogo.innerHTML += productoHTML;
+        });
+      })
+      .catch(err => {
+        console.error('Error al cargar productos:', err);
+      });
+  </script>
+  
+</body>
+</html>
