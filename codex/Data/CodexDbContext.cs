@@ -9,6 +9,8 @@ namespace Codex.Data
 
         public DbSet<Usuario> Usuarios { get; set; }
 
+        public DbSet<Computer> Computers { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Usuario>().HasKey(u => u.ID_Usuario);

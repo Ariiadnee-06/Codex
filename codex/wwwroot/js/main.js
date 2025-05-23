@@ -24,20 +24,24 @@ const openOldFormBtn = document.getElementById('openOld');
 const formOldModal = document.getElementById('form_modalOld');
 const closeOldModal = document.getElementById('close_modalOld');
 
-const alertBox = document.getElementById('login-alert');
 const rawUser = localStorage.getItem('usuario');
 const user = rawUser ? JSON.parse(rawUser) : null;
 
+// Modal de alerta de login
+const alertModal = document.getElementById('login-alert-modal');
+const closeAlertModal = document.getElementById('close_alert_modal');
+
 const mostrarAlerta = () => {
-    if (alertBox) {
-        alertBox.classList.remove('hidden');
-        alertBox.style.opacity = '1';
-        setTimeout(() => {
-            alertBox.style.opacity = '0';
-            setTimeout(() => alertBox.classList.add('hidden'), 500);
-        }, 9000); // 9 segundos en pantalla
+    if (alertModal) {
+        alertModal.classList.remove('hidden');
     }
 };
+
+if (closeAlertModal) {
+    closeAlertModal.addEventListener('click', () => {
+        alertModal.classList.add('hidden');
+    });
+}
 
 if (openFormBtn) {
     openFormBtn.addEventListener('click', (e) => {
@@ -62,9 +66,8 @@ if (openOldFormBtn) {
         if (!user || !user.nombre) {
             mostrarAlerta();
         } else {
-            formModal.classList.remove('hidden');
+            formOldModal.classList.remove('hidden');
         }
-
     });
 }
 
@@ -74,8 +77,7 @@ if (closeOldModal) {
     });
 }
 
-
-// Inicio de Script para cerrar sesión y mostrar sesiones - By Lady 
+// ----------------- CERRAR SESIÓN Y MOSTRAR USUARIO -----------------
 window.addEventListener("DOMContentLoaded", () => {
     const rawUser = localStorage.getItem('usuario');
     const user = rawUser ? JSON.parse(rawUser) : null;
@@ -88,8 +90,8 @@ window.addEventListener("DOMContentLoaded", () => {
     console.log("🔍 Usuario detectado:", user);
 
     if (user && user.nombre) {
-        console.log("✅ Sesión activa con:", user.Nombre);
-        if (userNameSpan) userNameSpan.textContent = `Hola, ${user.Nombre}`;
+        console.log("✅ Sesión activa con:", user.nombre);
+        if (userNameSpan) userNameSpan.textContent = `Hola, ${user.nombre}`;
         if (logoutLi) logoutLi.classList.remove('hidden');
         if (loginLi) loginLi.classList.add('hidden');
     } else {
@@ -108,5 +110,3 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-
-

@@ -125,3 +125,16 @@ document.getElementById('show-register').onclick = () => {
     document.getElementById('show-login').classList.remove('active-tab');
 };
 
+document.getElementById('show-login').addEventListener('click', () => {
+    document.getElementById('login-form').classList.add('active-form');
+    document.getElementById('register-form').classList.remove('active-form');
+    document.getElementById('show-login').classList.add('active-tab');
+    document.getElementById('show-register').classList.remove('active-tab');
+});
+
+document.getElementById('show-register').addEventListener('click', () => {
+    document.getElementById('register-form').classList.add('active-form');
+    document.getElementById('login-form').classList.remove('active-form');
+    document.getElementById('show-register').classList.add('active-tab');
+    document.getElementById('show-login').classList.remove('active-tab');
+});
