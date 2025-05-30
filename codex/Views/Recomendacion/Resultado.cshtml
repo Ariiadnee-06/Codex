@@ -1,0 +1,31 @@
+﻿@model List<codex.Models.Computadora>
+@{
+    ViewData["Title"] = "Recomendaciones para ti";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (!Model.Any())
+{
+    <p>No encontramos computadoras que coincidan con tus respuestas. Intenta ajustar el presupuesto o necesidades.</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <img src="@item.ImagenUrl" class="card-img-top" alt="Imagen de @item.Modelo" />
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Marca @item.Modelo</h5>
+                        <p>@item.Descripcion</p>
+                     
+                        <p><strong>Precio:</strong> @item.Precio.ToString("C0", new System.Globalization.CultureInfo("es-CO"))</p>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

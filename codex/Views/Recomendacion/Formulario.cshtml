@@ -1,0 +1,259 @@
+﻿<!--- POR FAVOR NO EDITAR NI TOCAR ESTE ARCHIVO, ESTA ES LA BASE FUNCIONAL DEL FORMULARIO QUE LEE LAS RESPUESTAS DEL USUARIO, ES UN EJEMPLO PARA QUE LO IMPLEMENTEN EN OTRAS AREAS---->
+
+@model codex.ViewModels.FormularioRecomendacionViewModel
+@{
+    ViewData["Title"] = "Encuentra tu computadora ideal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        color: #333;
+        font-family: 'Segoe UI', Roboto, sans-serif;
+    }
+
+    h2 {
+        color: #6f42c1;
+        margin-bottom: 30px;
+    }
+
+    label {
+        font-weight: 600;
+        margin-bottom: 8px;
+        display: block;
+        color: #444;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-control,
+    select,
+    input[type=number],
+    input[type=range] {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        width: 100%;
+    }
+
+        .form-control:focus {
+            border-color: #6f42c1;
+            outline: none;
+            box-shadow: 0 0 5px #b088f9;
+        }
+
+    .btn-purple {
+        background-color: #6f42c1;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-purple:hover {
+            background-color: #8c5cf1;
+        }
+
+    .slider-value {
+        font-weight: bold;
+        color: #6f42c1;
+        font-size: 1.1em;
+        margin-left: 12px;
+    }
+
+    .card {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .form-text {
+        font-size: 0.9em;
+        color: #777;
+    }
+</style>
+
+<div class="card">
+    <h2>@ViewData["Title"]</h2>
+
+    <form asp-action="Formulario" method="post">
+        <!-- Pregunta 1 -->
+        <div class="form-group">
+            <label>1. ¿Para qué usarás principalmente la computadora?</label>
+            <select asp-for="UsoPrincipal" class="form-control">
+                <option value="">-- Elige una opción --</option>
+                <option value="7">Gaming (juegos de última o media generación)</option>
+                <option value="1">Tareas básicas: YouTube, redes sociales, videollamadas</option>
+                <option value="2">Estudio: trabajos, clases, investigación</option>
+                <option value="3">Programación o desarrollo de software</option>
+                <option value="4">Diseño gráfico: Photoshop, Illustrator, arte</option>
+                <option value="5">Edición de video: Premiere, After Effects, DaVinci</option>
+                <option value="6">Arquitectura, animación 3D, CAD, simulación</option>
+            </select>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="form-group">
+            <label>2. ¿Necesitas que sea portátil?</label>
+            <select asp-for="NecesitaPortabilidad" class="form-control">
+                <option value="">-- Elige una opción --</option>
+                <option value="true">Sí, quiero moverla fácilmente</option>
+                <option value="false">No, la usaré en un solo lugar</option>
+            </select>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="form-group">
+            <label>3. ¿Usas muchas cosas al mismo tiempo?</label>
+            <select asp-for="RealizaMultitareaPesada" class="form-control">
+                <option value="">-- Elige una opción --</option>
+                <option value="true">Sí, suelo tener Zoom, Word, navegador, etc. al mismo tiempo</option>
+                <option value="false">No, una cosa a la vez me basta</option>
+            </select>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="form-group">
+            <label>4. ¿Vas a usar programas que requieren buena calidad de imagen?</label>
+            <select asp-for="UsaProgramasGraficos" class="form-control">
+                <option value="">-- Elige una opción --</option>
+                <option value="true">Sí, uso diseño, edición o juegos</option>
+                <option value="false">No, nada muy exigente en imagen o video</option>
+            </select>
+        </div>
+
+        <!-- Presupuesto con slider -->
+        <div class="form-group">
+            <label>5. ¿Cuál es tu presupuesto máximo?</label>
+            <input asp-for="Presupuesto" type="range" class="form-control-range" min="100000" max="99000000" step="100000" id="sliderPresupuesto" />
+            <div><span class="slider-value" id="valorPresupuesto">$0</span></div>
+            <small class="form-text">Desliza para elegir tu presupuesto (COP)</small>
+        </div>
+
+        <!-- Personalización -->
+        <div class="form-group">
+            <label>6. ¿Quieres personalizar más tu experiencia?</label>
+            <select asp-for="DeseaPersonalizar" class="form-control">
+                <option value="">-- Elige una opción --</option>
+                <option value="true">Sí, quiero más control y detalles técnicos</option>
+                <option value="false">No, solo quiero una recomendación sencilla</option>
+            </select>
+        </div>
+
+        <!-- Sección personalizada (se oculta hasta que el usuario diga que "no") -->
+        <div id="seccionPersonalizada" style="display: none; margin-top: 30px;">
+            <hr />
+            <h4 class="text-muted">Personalización avanzada</h4>
+
+            <div class="form-group mt-3">
+                <label>7. ¿Tienes una marca preferida?</label>
+                <select class="form-control" name="MarcaPreferida">
+                    <option value="">-- No tengo preferencia --</option>
+                    <option>HP</option>
+                    <option>ASUS</option>
+                    <option>Dell</option>
+                    <option>Acer</option>
+                    <option>Lenovo</option>
+                    <option>Apple</option>
+                </select>
+            </div>
+
+            <div class="form-group mt-3">
+                <label>8. ¿Qué tamaño de pantalla prefieres?</label>
+                <select class="form-control" name="TamanoPantalla">
+                    <option value="">-- Cualquiera está bien --</option>
+                    <option>13 pulgadas o menos (ultraportátil)</option>
+                    <option>14-15 pulgadas (equilibrada)</option>
+                    <option>16 pulgadas o más (experiencia visual)</option>
+                </select>
+            </div>
+
+            <div class="form-group mt-3">
+                <label>9. ¿Cuánta duración de batería necesitas como mínimo?</label>
+                <select class="form-control" name="DuracionBateria">
+                    <option value="">-- Cualquiera está bien --</option>
+                    <option>4 horas</option>
+                    <option>6 horas</option>
+                    <option>8 horas o más</option>
+                </select>
+            </div>
+
+            <div class="form-group mt-3">
+                <label>10. ¿Te gustaría que tenga teclado retroiluminado?</label>
+                <select class="form-control" name="TecladoRetroiluminado">
+                    <option value="">-- No importa --</option>
+                    <option value="true">Sí, lo prefiero</option>
+                    <option value="false">No es necesario</option>
+                </select>
+            </div>
+
+            <div class="form-group mt-3">
+                <label>11. ¿Qué tipo de almacenamiento prefieres?</label>
+                <select class="form-control" name="TipoAlmacenamiento">
+                    <option value="">-- Cualquiera --</option>
+                    <option>SSD (rápido)</option>
+                    <option>HDD (más económico)</option>
+                    <option>Ambos</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-purple mt-4">Recomiéndame una computadora</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    const slider = document.getElementById("sliderPresupuesto");
+    const output = document.getElementById("valorPresupuesto");
+    const seccionPersonalizada = document.getElementById("seccionPersonalizada");
+    const selectorPersonalizacion = document.querySelector("select[name='DeseaPersonalizar']");
+
+    function formatCOP(value) {
+        return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    function updateLabel() {
+        output.textContent = formatCOP(slider.value);
+    }
+
+    slider.addEventListener("input", updateLabel);
+    window.onload = updateLabel;
+
+    selectorPersonalizacion.addEventListener("change", function () {
+        if (this.value === "true") {
+            seccionPersonalizada.style.display = "block";
+        } else {
+            seccionPersonalizada.style.display = "none";
+        }
+    });
+</script>
+
+
+<script>
+    const slider = document.getElementById("sliderPresupuesto");
+    const output = document.getElementById("valorPresupuesto");
+
+    function formatCOP(value) {
+        return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    function updateLabel() {
+        output.textContent = formatCOP(slider.value);
+    }
+
+    slider.addEventListener("input", updateLabel);
+    window.onload = updateLabel;
+</script>
