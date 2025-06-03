@@ -7,9 +7,9 @@
 ## 👥 Proyecto Académico
 
 - **Materia:** Ingeniería de Software I  
-- **Equipo:** *Los Últimos Sobrevivientes*  
+- **Equipo:** Codex 
 - **Integrantes:**
-  - 👩‍💻 Lady Johana Torres Ríos *(Autora principal)*
+  - 👩‍💻 Lady Johana Torres Ríos 
   - 👩‍💻 Ariadne Castañeda  
   - 👨‍💻 Juan Pablo  
 
