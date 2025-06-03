@@ -1,8 +1,201 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="icon" href="~/imagenes/Codex-Logo.png" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <title>Codex | Inicio</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav_container">
+            <a href="~/Home/Index" class="nav_logo">Codex</a>
+            <div class="nav_menu" id="nav_menu">
+                <div class="nav_close" id="nav_close">
+                    <img src="~/imagenes/circulo-marca-x (1).png" alt="Cerrar menú" />
+                </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+                <ul class="nav_list">
+                    <li>
+                        <a href="#" class="nav_link">
+                            <img src="~/imagenes/carro-de-la-carretilla.png" alt="Carrito" class="nav_icon" />
+                            <span class="nav_text">Compra</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav_link">
+                            <img src="~/imagenes/me-gusta.png" alt="Favoritos" class="nav_icon" />
+                            <span class="nav_text">Favoritos</span>
+                        </a>
+                    </li>
+                    <li id="logout-li" class="hidden">
+                        <a href="#" id="logout-btn" class="nav_link">
+                            <img src="~/imagenes/cerrar-sesion.png" alt="Cerrar sesión" class="nav_icon" />
+                            <span class="nav_text">Cerrar sesión</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/Auth/Index" class="nav_link">
+                            <img src="~/imagenes/usuario-extranjero (1).png" alt="Iniciar sesión" class="nav_icon" />
+                            <span class="nav_text">Iniciar Sesión</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav_toggle" id="nav_toggle">
+                <img src="~/imagenes/menu (2).png" alt="Abrir menú" />
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+        <section class="container">
+            <div class="con1">
+                <h1 class="Titulo">Guíame desde cero</h1>
+                <div class="Imagen_Container">
+                    <div class="Img">
+                        <img src="~/imagenes/Mobile note list-pana.png" alt="Asistencia desde cero" />
+                        <button class="click_Aqui" id="openNew">Te ayudaré con eso</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="con2">
+                <h1 class="Titulo">Ya tengo algo en mente</h1>
+                <div class="Imagen_Container">
+                    <div class="Img">
+                        <img src="~/imagenes/Mobile UI-UX-amico.png" alt="Idea previa" />
+                        <button class="click_Aqui" id="openOld">Sigamos con el proceso</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal: Guíame desde cero -->
+        <div id="form_modal" class="modal hidden">
+            <div class="modal_content">
+                <span id="close_modal" class="close">&times;</span>
+                <div class="modal_body">
+                    <div class="image_side">
+                        <img src="~/imagenes/image-removebg-preview (5).png" alt="Asistencia" />
+                    </div>
+                    <div class="form_side">
+                        <h2>Te ayudamos desde cero</h2>
+                        <form>
+                            <label for="uso_computadora_nuevo">¿Para qué necesitas la computadora?</label><br />
+                            <select id="uso_computadora_nuevo" name="uso_computadora" required>
+                                <option value="">-- Selecciona una opción --</option>
+                                <option value="trabajo">Trabajar</option>
+                                <option value="estudio">Estudiar</option>
+                                <option value="jugar">Jugar</option>
+                                <option value="diseno">Diseño gráfico</option>
+                                <option value="otros">Otros</option>
+                            </select>
+
+                            <div id="campo_otro" style="display: none; margin-top: 10px;">
+                                <label for="otro_uso_nuevo">¿Cuál es el uso que le quieres dar?</label><br />
+                                <input type="text" id="otro_uso_nuevo" name="otro_uso" />
+                            </div>
+
+                            <label for="tipo_equipo_nuevo">¿Qué tipo de equipo prefieres?</label><br />
+                            <select id="tipo_equipo_nuevo" name="tipo_equipo" required>
+                                <option value="">-- Selecciona una opción --</option>
+                                <option value="PC">Computador de Mesa</option>
+                                <option value="Portatil">Portátil</option>
+                            </select>
+
+                            <div class="button">
+                                <button type="submit">Recomiéndame</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Ya tengo una idea -->
+        <div id="form_modalOld" class="modal hidden">
+            <div class="modal_content">
+                <span id="close_modalOld" class="close">&times;</span>
+                <div class="modal_body">
+                    <div class="image_side">
+                        <img src="~/imagenes/image-removebg-preview (5).png" alt="Asistencia" />
+                    </div>
+                    <div class="form_side">
+                        <h2>Cuéntanos tu idea</h2>
+                        <form>
+                            <label for="modelo_idea">¿Qué computadora tenías en mente?</label><br />
+                            <input type="text" id="modelo_idea" name="modelo_idea" />
+
+                            <label for="razon_idea">¿Por qué tenías en mente esta computadora?</label><br />
+                            <select id="razon_idea" name="razon_idea" required>
+                                <option value="">-- Selecciona una opción --</option>
+                                <option value="trabajo">Trabajar</option>
+                                <option value="estudio">Estudiar</option>
+                                <option value="jugar">Jugar</option>
+                                <option value="diseno">Diseño gráfico</option>
+                                <option value="otros">Otros</option>
+                            </select>
+
+                            <label for="tipo_equipo_idea">¿Qué tipo de equipo prefieres?</label><br />
+                            <select id="tipo_equipo_idea" name="tipo_equipo" required>
+                                <option value="">-- Selecciona una opción --</option>
+                                <option value="PC">Computador de Mesa</option>
+                                <option value="Portatil">Portátil</option>
+                            </select>
+
+                            <div class="button">
+                                <button type="submit">Recomiéndame</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section-about">
+                <h2>Codex</h2>
+                <p>
+                    Este es un e-commerce de recomendación de computadores y portátiles
+                    de acuerdo a la información que nos dé nuestro usuario.
+                </p>
+            </div>
+
+            <div class="footer-section-links">
+                <h2>Conexiones</h2>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section-contact">
+                <h2>Enlaces</h2>
+                <ul>
+                    <li><a href="https://github.com/Ariiadnee-06/Codex.git">GitHub</a></li>
+                    <li><a href="https://samuelmachado1806sm.atlassian.net/jira/software/projects/CODEX/summary">Jira</a></li>
+                    <li><p>IUPB - Ingeniería de Software</p></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Codex | Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="~/js/main.js"></script>
+</body>
+</html>
