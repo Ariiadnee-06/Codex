@@ -5,12 +5,120 @@
       "PackagePath": "staticwebassets\\codex.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Fuente\\Coolvetica Rg.otf",
+      "PackagePath": "staticwebassets\\Fuente\\Coolvetica Rg.otf"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Fuente\\Coolvetica.otf",
+      "PackagePath": "staticwebassets\\Fuente\\Coolvetica.otf"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Fuente\\Lined.ttf",
+      "PackagePath": "staticwebassets\\Fuente\\Lined.ttf"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\Codex-Logo.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Codex-Logo.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\Logo-Blanco.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Logo-Blanco.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\Mobile UI-UX-amico.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Mobile UI-UX-amico.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\Mobile note list-pana.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Mobile note list-pana.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\candado.png",
+      "PackagePath": "staticwebassets\\Imagenes\\candado.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\carro-de-la-carretilla.png",
+      "PackagePath": "staticwebassets\\Imagenes\\carro-de-la-carretilla.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\casa (1).png",
+      "PackagePath": "staticwebassets\\Imagenes\\casa (1).png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\cerrar-sesion.png",
+      "PackagePath": "staticwebassets\\Imagenes\\cerrar-sesion.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\cerrar.png",
+      "PackagePath": "staticwebassets\\Imagenes\\cerrar.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\circulo-marca-x (1).png",
+      "PackagePath": "staticwebassets\\Imagenes\\circulo-marca-x (1).png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\firma (1).png",
+      "PackagePath": "staticwebassets\\Imagenes\\firma (1).png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\image-removebg-preview (5).png",
+      "PackagePath": "staticwebassets\\Imagenes\\image-removebg-preview (5).png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\logo.png",
+      "PackagePath": "staticwebassets\\Imagenes\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\me-gusta.png",
+      "PackagePath": "staticwebassets\\Imagenes\\me-gusta.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\menu (2).png",
+      "PackagePath": "staticwebassets\\Imagenes\\menu (2).png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\menu (3).png",
+      "PackagePath": "staticwebassets\\Imagenes\\menu (3).png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\proximo.png",
+      "PackagePath": "staticwebassets\\Imagenes\\proximo.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\sobre.png",
+      "PackagePath": "staticwebassets\\Imagenes\\sobre.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\user.png",
+      "PackagePath": "staticwebassets\\Imagenes\\user.png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\usuario-extranjero (1).png",
+      "PackagePath": "staticwebassets\\Imagenes\\usuario-extranjero (1).png"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\Imagenes\\usuario.png",
+      "PackagePath": "staticwebassets\\Imagenes\\usuario.png"
+    },
+    {
       "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
       "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\js\\auth.js",
+      "PackagePath": "staticwebassets\\js\\auth.js"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
     },
     {
       "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\js\\site.js",

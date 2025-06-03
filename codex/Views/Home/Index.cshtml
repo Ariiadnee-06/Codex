@@ -40,11 +40,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="~/Auth/Index" class="nav_link">
-                            <img src="~/imagenes/usuario-extranjero (1).png" alt="Iniciar sesión" class="nav_icon" />
+                        <a asp-controller="Auth" asp-action="Auth" class="nav_link">
+                            <img src="@Url.Content("~/imagenes/usuario-extranjero (1).png")" alt="Iniciar sesión" class="nav_icon" />
                             <span class="nav_text">Iniciar Sesión</span>
                         </a>
                     </li>
+
                 </ul>
             </div>
 
