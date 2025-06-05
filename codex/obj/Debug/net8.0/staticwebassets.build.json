@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WuBjKnP+YmsuNkq1gtsXYWyUplQ1ZWXGHqnffqUKSuA=",
+  "Hash": "rVoTao9/mSjXx63tQs1gRppzl7Vij12ckHnrOhdbcuA=",
   "Source": "codex",
   "BasePath": "_content/codex",
   "Mode": "Default",
@@ -1195,6 +1195,25 @@
       "OriginalItemSpec": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\codex.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\css\\admin.css",
+      "SourceId": "codex",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\",
+      "BasePath": "_content/codex",
+      "RelativePath": "css/admin.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admin.css"
+    },
+    {
       "Identity": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\css\\auth.css",
       "SourceId": "codex",
       "SourceType": "Discovered",
@@ -1744,6 +1763,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Imagenes\\usuario-extranjero (1).png"
+    },
+    {
+      "Identity": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\js\\admin.js",
+      "SourceId": "codex",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\",
+      "BasePath": "_content/codex",
+      "RelativePath": "js/admin.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\admin.js"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\js\\auth.js",

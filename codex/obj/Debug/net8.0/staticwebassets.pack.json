@@ -101,6 +101,10 @@
       "PackagePath": "staticwebassets\\Imagenes\\usuario.png"
     },
     {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\css\\admin.css",
+      "PackagePath": "staticwebassets\\css\\admin.css"
+    },
+    {
       "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\css\\auth.css",
       "PackagePath": "staticwebassets\\css\\auth.css"
     },
@@ -119,6 +123,10 @@
     {
       "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\js\\admin.js",
+      "PackagePath": "staticwebassets\\js\\admin.js"
     },
     {
       "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\js\\auth.js",
