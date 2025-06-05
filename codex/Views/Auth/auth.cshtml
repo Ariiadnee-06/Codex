@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = null;
+    ViewData["Title"] = "Iniciar Sesión";
 }
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="icon" href="~/imagenes/Codex-Logo.png" />
     <link rel="stylesheet" href="~/css/auth.css" />
-    <title>Codex | Inicia Sesion</title>
+    <title>Codex | Inicia sesión</title>
 
 </head>
 <body>
@@ -31,7 +31,7 @@
                         </a>
                     </li>
                     <li>
-                        <a asp-controller="Favoritos" asp-action="Favoritos" class="nav_link">
+                        <a href="#" class="nav_link">
                             <img src="~/imagenes/me-gusta.png" alt="Favoritos" class="nav_icon" />
                             <span class="nav_text">Favoritos</span>
                         </a>
@@ -54,9 +54,10 @@
     <div class="auth-container">
         <div class="auth-wrapper">
             <div class="forms" id="forms">
-                <form id="login-form" method="post" action="">
+                <form id="login-form" method="post">
+                    @Html.AntiForgeryToken()
                     <h2>Inicia Sesión</h2>
-                    <p>¿No tienes cuenta con nosotros?<a href="#"> Registrate</a></p>
+                    <p>¿No tienes cuenta con nosotros?<a href="#" onclick="changeRegister(); return false;"> Registrate</a></p>
 
                     <label for="login-email">Correo Electronico</label>
                     <div class="auth-input">
@@ -72,9 +73,10 @@
                     <button type="submit" class="button">Entrar</button>
                 </form>
 
-                <form id="register-form" method="post" action="">
+                <form id="register-form" method="post">
+                    @Html.AntiForgeryToken()
                     <h2>Crear una cuenta</h2>
-                    <p>¿Ya tienes cuenta con nosotros?<a href="#"> Inicia Sesión</a></p>
+                    <p>¿Ya tienes cuenta con nosotros?<a href="#" onclick="changeLogin(); return false;"> Inicia Sesión</a></p>
 
                     <label>Llena los siguientes campos</label>
                     <div class="auth-input">
