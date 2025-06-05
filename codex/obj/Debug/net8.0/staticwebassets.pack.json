@@ -105,6 +105,10 @@
       "PackagePath": "staticwebassets\\css\\auth.css"
     },
     {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\css\\favoritos.css",
+      "PackagePath": "staticwebassets\\css\\favoritos.css"
+    },
+    {
       "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

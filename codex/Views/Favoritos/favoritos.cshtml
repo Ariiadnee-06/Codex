@@ -1,0 +1,138 @@
+﻿@{
+    Layout = null; // Si estás usando un layout, reemplaza esto con: Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="icon" href="~/Imagenes/Codex-Logo.png" />
+    <link rel="stylesheet" href="~/css/favoritos.css" />
+    <title>Codex | Favoritos</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav_container">
+            <a href="@Url.Action("Index", "Home")" class="nav_logo">Codex</a>
+            <div class="nav_menu" id="nav_menu">
+                <div class="nav_close" id="nav_close">
+                    <img src="~/imagenes/circulo-marca-x (1).png" alt="Cerrar menú" />
+                </div>
+                <ul class="nav_list">
+                    <li>
+                        <a href="#" class="nav_link">
+                            <img src="~/imagenes/carro-de-la-carretilla.png" alt="Carrito" class="nav_icon" />
+                            <span class="nav_text">Compra</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Favoritos" asp-action="Favoritos" class="nav_link">
+                            <img src="~/imagenes/me-gusta.png" alt="Favoritos" class="nav_icon" />
+                            <span class="nav_text">Favoritos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Auth" asp-action="Auth" class="nav_link">
+                            <img src="@Url.Content("~/imagenes/usuario-extranjero (1).png")" alt="Iniciar sesión" class="nav_icon" />
+                            <span class="nav_text">Iniciar Sesión</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav_toggle" id="nav_toggle">
+                <img src="~/imagenes/menu (2).png" alt="Abrir menú" />
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido -->
+    <main>
+        <div class="favoritos">
+            <ul id="listaFavoritos"></ul>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section-about">
+                <h2>Codex</h2>
+                <p>Este es un e-commerce de recomendación de computadores y portátiles de acuerdo a la información que nos dé nuestro usuario.</p>
+            </div>
+            <div class="footer-section-links">
+                <h2>Conexiones</h2>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-section-contact">
+                <h2>Enlaces</h2>
+                <ul>
+                    <li><a href="https://github.com/Ariiadnee-06/Codex.git">GitHub</a></li>
+                    <li><a href="https://samuelmachado1806sm.atlassian.net/jira/software/projects/CODEX/summary">Jira</a></li>
+                    <li><p>IUPB - Ingeniería de Software</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Codex | Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', mostrarFavoritos);
+
+        function agregarFavorito(nombre, url) {
+            let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+            if (!favoritos.find(fav => fav.url === url)) {
+                favoritos.push({ nombre, url });
+                localStorage.setItem('favoritos', JSON.stringify(favoritos));
+                mostrarFavoritos();
+            } else {
+                alert("¡Este sitio ya está en favoritos!");
+            }
+        }
+
+        function quitarFavorito(url) {
+            let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+            favoritos = favoritos.filter(fav => fav.url !== url);
+            localStorage.setItem('favoritos', JSON.stringify(favoritos));
+            mostrarFavoritos();
+        }
+
+        function mostrarFavoritos() {
+            const lista = document.getElementById('listaFavoritos');
+            lista.innerHTML = '';
+            const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
+            if (favoritos.length === 0) {
+                const mensaje = document.createElement('span');
+                mensaje.textContent = "Por el momento no tienes favoritos.";
+
+                mensaje.style.display = "block";
+                mensaje.style.margin = "40px auto";
+                mensaje.style.textAlign = "center";
+                mensaje.style.color = "#777";
+                mensaje.style.fontFamily = "Lined, sans-serif";
+                mensaje.style.fontSize = "20px";
+
+                lista.appendChild(mensaje);
+                return;
+            }
+
+            favoritos.forEach(fav => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                            <a href="${fav.url}" target="_blank">${fav.nombre}</a>
+                            <button class="quitar-btn" onclick="quitarFavorito('${fav.url}')">Quitar</button>
+                        `;
+                lista.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

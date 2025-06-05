@@ -1,0 +1,320 @@
+/* ------------------ Fuentes ------------------ */
+@font-face {
+    font-family: "Coolvetica";
+    src: url("../Fuente/Coolvetica Rg.otf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lined";
+    src: url("../Fuente/Lined.ttf");
+    font-display: swap;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0E021F;
+    font-family: "Lined", sans-serif;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ------------------ Header ------------------ */
+.header {
+    font-family: "Coolvetica";
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    left: 0;
+    background-color: #0E021F;
+    border-bottom: 0.5px solid #FFF;
+    z-index: 1000;
+    padding-left: 30px;
+}
+
+.nav_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding-right: 40px;
+}
+
+.nav_logo {
+    color: #FFF;
+    font-size: 40px;
+    text-decoration: none;
+    transition: color 0.4s;
+}
+
+.nav_logo:hover {
+    color: beige;
+}
+
+.nav_menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav_list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav_list a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav_list a:hover {
+    color: beige;
+}
+
+.nav_list img {
+    margin-top: 13px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.nav_list img:hover {
+    transform: scale(1.1);
+}
+/*------------------Contenido--------------------------------*/
+main{
+    padding:90px 40px;
+    background-color: #FFF;
+    font-family: "Lined";
+    height: 100vh;
+}
+
+/* ------------------ Parte del responsive-------------------*/
+.nav_toggle,
+.nav_close {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.nav_toggle {
+    width: 30px;
+    height: 30px;
+}
+
+.nav_close {
+    width: 18px;
+    height: 18px;
+}
+
+.nav_toggle img,
+.nav_close img {
+    width: 100%;
+}
+
+.nav_text {
+    display: none;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/*---------------------Responsive------------------------*/
+@media screen and (max-width: 1150px) {
+    .header {
+        height: 60px;
+        padding-left: 25px;
+    }
+
+    .nav_logo {
+        font-size: 35px;
+    }
+
+    .nav_menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        background-color: rgba(14, 2, 31, 0.95);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 50px 0 0 25px;
+        transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        border-left: 1px solid #FFF;
+        opacity: 0;
+    }
+
+    .nav_menu.show_menu {
+        right: 0;
+        opacity: 1;
+    }
+
+    .nav_toggle {
+        display: block;
+    }
+
+    .nav_menu.show_menu ~ .nav_toggle {
+        display: none;
+    }
+
+    .nav_menu.show_menu .nav_close {
+        display: block;
+    }
+
+    .nav_list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding-left: 20px;
+        width: 100%;
+    }
+
+    .nav_link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .nav_text {
+        display: block;
+        font-size: 18px;
+        padding-left: 10px;
+    }
+
+    
+    .footer-section-about, .footer-section-contact, .footer-section-links{
+        flex: 0px;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    
+      .footer-section-about,.footer-section-links{
+        width: 100%;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 20px;
+      }
+
+      .footer-section-contact{
+        width: 100%;
+        border-bottom: none;
+      }
+}
+
+
+.footer {
+    background-color: #0E021F;
+    color: #fff;
+    font-family: 'Lined';
+    padding: 40px 20px 10px;
+    border-top: 1px solid #fff;
+}
+  
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.footer-section-about, .footer-section-contact, .footer-section-links{
+    flex: 1 1 250px;
+}
+  
+.footer-section-contact h2,
+.footer-section-links h2,
+.footer-section-about h2 {
+    font-family: 'Coolvetica';
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #f6e6fc;
+    font-weight: lighter;
+}
+
+.footer-section-contact p,
+.footer-section-links p,
+.footer-section-about p {
+    font-size: 20px;
+    color: #fff;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.footer-section-contact a,
+.footer-section-links a,
+.footer-section-about a {
+    position: relative;
+    font-size: 20px;
+    color: #fff;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+.footer-section-contact a::after,
+.footer-section-links a::after,
+.footer-section-about a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #f6e6fc;
+    transition: width 0.5s ease, left 0.5s ease;
+    transform: translateX(-50%);
+}
+
+.footer-section-contact a:hover,
+.footer-section-links a:hover,
+.footer-section-about a:hover {
+    color: #f6e6fc;
+}
+
+.footer-section-contact a:hover::after,
+.footer-section-links a:hover::after,
+.footer-section-about a:hover::after {
+    width: 100%;
+}
+
+  
+.footer-section-contact, .footer-section-links ul{
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section-links ul li{
+    list-style: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #fff2;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #ccc;
+  }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XV3cdTmcxnCaGp8PU5sW4NIManU+Wo95ufbuQiluHIo=",
+  "Hash": "WuBjKnP+YmsuNkq1gtsXYWyUplQ1ZWXGHqnffqUKSuA=",
   "Source": "codex",
   "BasePath": "_content/codex",
   "Mode": "Default",
@@ -1212,6 +1212,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\auth.css"
+    },
+    {
+      "Identity": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\css\\favoritos.css",
+      "SourceId": "codex",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\",
+      "BasePath": "_content/codex",
+      "RelativePath": "css/favoritos.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\favoritos.css"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\css\\site.css",
