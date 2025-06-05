@@ -11,11 +11,25 @@
     font-display: swap;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Lined";
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 .header {
@@ -121,12 +135,53 @@ body {
     background-color: #F5F5F5;
 }
 
+
 .auth-container {
     display: grid;
     grid-template-columns: 4.1fr 5fr 0.9fr;
-    align-items: center;
     width: 57.25rem;
     height: 31rem;
+}
+
+@media screen and (max-width: 1150px) {
+    .auth-container {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 65% 10%;
+        width: 100vw;
+        max-width: 100vw;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .auth-banner {
+        display: none;
+    }
+
+    .auth-wrapper {
+        grid-column: 1 / 2;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #sidebar {
+        grid-column: 2 / 3;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border-radius: 30px;
+        min-width: 20px;
+        box-sizing: border-box;
+    }
+
+    .auth-sidebar img {
+        width: 20px;
+    }
 }
 
 .auth-wrapper {
@@ -135,8 +190,7 @@ body {
     height: 100%;
     overflow: hidden;
     border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.09), /* Sombra externa fuerte */
-    0 8px 10px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.09), 0 8px 10px rgba(0, 0, 0, 0.10);
 }
 
 .forms {
@@ -148,7 +202,7 @@ body {
     }
 
 #login-form {
-    padding-top: 60px;
+    padding: 80px 20px;
     margin-top: 1rem;
 }
 

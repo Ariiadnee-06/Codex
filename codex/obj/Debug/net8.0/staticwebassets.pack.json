@@ -101,6 +101,10 @@
       "PackagePath": "staticwebassets\\Imagenes\\usuario.png"
     },
     {
+      "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\css\\auth.css",
+      "PackagePath": "staticwebassets\\css\\auth.css"
+    },
+    {
       "Id": "C:\\Users\\LENOVO\\Documents\\Codex\\codex\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
