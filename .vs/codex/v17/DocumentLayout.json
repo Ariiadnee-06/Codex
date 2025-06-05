@@ -1,81 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\velas\\Codex\\",
+  "WorkspaceRootPath": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\views\\recomendacion\\formulario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|d:\\universidad\\2025\\ingenieria de software 1\\final\\codex-original\\codex\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|d:\\universidad\\2025\\ingenieria de software 1\\final\\codex-original\\codex\\views\\recomendacion\\formulario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\views\\recomendacion\\formulario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\views\\recomendacion\\resultado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\views\\recomendacion\\resultado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\controllers\\recomendacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\controllers\\recomendacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\models\\computadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\models\\computadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\viewmodels\\formulariorecomendacionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\viewmodels\\formulariorecomendacionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\data\\seeders\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|d:\\universidad\\2025\\ingenieria de software 1\\final\\codex-original\\codex\\data\\seeders\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\data\\seeders\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\models\\tipouso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\models\\tipouso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\codex.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\codex.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\codex\\codex\\Data\\Migrations\\20250530001638_EstructuraInicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\models\\respuesta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\models\\respuesta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\models\\pregunta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\models\\pregunta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\models\\tipodispositivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\models\\tipodispositivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\data\\migrations\\20250530001749_estructurainicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\data\\migrations\\20250530001749_estructurainicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\data\\migrations\\20250530011522_permitirnullenalmacenamientosecundario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\data\\migrations\\20250530011522_permitirnullenalmacenamientosecundario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|d:\\universidad\\2025\\ingenieria de software 1\\final\\codex-original\\codex\\controllers\\recomendacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\controllers\\recomendacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -85,234 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "codex\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "codex\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T01:33:01.707Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "codex\\Views\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "codex\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T01:33:00.07Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "DbInitializer.cs",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Data\\Seeders\\DbInitializer.cs",
+              "DocumentMoniker": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Data\\Seeders\\DbInitializer.cs",
               "RelativeDocumentMoniker": "codex\\Data\\Seeders\\DbInitializer.cs",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Data\\Seeders\\DbInitializer.cs",
+              "ToolTip": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Data\\Seeders\\DbInitializer.cs",
               "RelativeToolTip": "codex\\Data\\Seeders\\DbInitializer.cs",
-              "ViewState": "AgIAAI4AAAAAAAAAAAAiwKsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T01:12:09.113Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FormularioRecomendacionViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\ViewModels\\FormularioRecomendacionViewModel.cs",
-              "RelativeDocumentMoniker": "codex\\ViewModels\\FormularioRecomendacionViewModel.cs",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\ViewModels\\FormularioRecomendacionViewModel.cs",
-              "RelativeToolTip": "codex\\ViewModels\\FormularioRecomendacionViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T00:23:51.812Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "20250530001638_EstructuraInicial.cs",
-              "DocumentMoniker": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\codex\\codex\\Data\\Migrations\\20250530001638_EstructuraInicial.cs",
-              "ToolTip": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\codex\\codex\\Data\\Migrations\\20250530001638_EstructuraInicial.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T00:16:38.72Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Respuesta.cs",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Models\\Respuesta.cs",
-              "RelativeDocumentMoniker": "codex\\Models\\Respuesta.cs",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Models\\Respuesta.cs",
-              "RelativeToolTip": "codex\\Models\\Respuesta.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T00:14:24.111Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TipoUso.cs",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Models\\TipoUso.cs",
-              "RelativeDocumentMoniker": "codex\\Models\\TipoUso.cs",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Models\\TipoUso.cs",
-              "RelativeToolTip": "codex\\Models\\TipoUso.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T00:13:41.11Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Program.cs",
-              "RelativeDocumentMoniker": "codex\\Program.cs",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Program.cs",
-              "RelativeToolTip": "codex\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAC4AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T00:12:24.184Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Formulario.cshtml",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Views\\Recomendacion\\Formulario.cshtml",
-              "RelativeDocumentMoniker": "codex\\Views\\Recomendacion\\Formulario.cshtml",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Views\\Recomendacion\\Formulario.cshtml",
-              "RelativeToolTip": "codex\\Views\\Recomendacion\\Formulario.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T00:27:17.68Z",
+              "WhenOpened": "2025-06-05T23:09:51.009Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Resultado.cshtml",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Views\\Recomendacion\\Resultado.cshtml",
-              "RelativeDocumentMoniker": "codex\\Views\\Recomendacion\\Resultado.cshtml",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Views\\Recomendacion\\Resultado.cshtml",
-              "RelativeToolTip": "codex\\Views\\Recomendacion\\Resultado.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Title": "Formulario.cshtml",
+              "DocumentMoniker": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Views\\Recomendacion\\Formulario.cshtml",
+              "RelativeDocumentMoniker": "codex\\Views\\Recomendacion\\Formulario.cshtml",
+              "ToolTip": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Views\\Recomendacion\\Formulario.cshtml",
+              "RelativeToolTip": "codex\\Views\\Recomendacion\\Formulario.cshtml",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAwwI0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T00:27:40.203Z"
+              "WhenOpened": "2025-06-05T22:39:39.381Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Computadora.cs",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Models\\Computadora.cs",
-              "RelativeDocumentMoniker": "codex\\Models\\Computadora.cs",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Models\\Computadora.cs",
-              "RelativeToolTip": "codex\\Models\\Computadora.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAswB8AAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T00:12:54.744Z"
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "codex\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "codex\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAcwIQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T22:13:03.487Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "RecomendacionController.cs",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Controllers\\RecomendacionController.cs",
+              "DocumentMoniker": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Controllers\\RecomendacionController.cs",
               "RelativeDocumentMoniker": "codex\\Controllers\\RecomendacionController.cs",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Controllers\\RecomendacionController.cs",
+              "ToolTip": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Controllers\\RecomendacionController.cs",
               "RelativeToolTip": "codex\\Controllers\\RecomendacionController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwC4AAABlAAAAAAAAAA==",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T00:25:15.019Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "20250530001749_EstructuraInicial.cs",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Data\\Migrations\\20250530001749_EstructuraInicial.cs",
-              "RelativeDocumentMoniker": "codex\\Data\\Migrations\\20250530001749_EstructuraInicial.cs",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Data\\Migrations\\20250530001749_EstructuraInicial.cs",
-              "RelativeToolTip": "codex\\Data\\Migrations\\20250530001749_EstructuraInicial.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T00:17:49.806Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "codex.csproj",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\codex.csproj",
-              "RelativeDocumentMoniker": "codex\\codex.csproj",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\codex.csproj",
-              "RelativeToolTip": "codex\\codex.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-30T00:23:16.182Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "20250530011522_PermitirNullEnAlmacenamientoSecundario.cs",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Data\\Migrations\\20250530011522_PermitirNullEnAlmacenamientoSecundario.cs",
-              "RelativeDocumentMoniker": "codex\\Data\\Migrations\\20250530011522_PermitirNullEnAlmacenamientoSecundario.cs",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Data\\Migrations\\20250530011522_PermitirNullEnAlmacenamientoSecundario.cs",
-              "RelativeToolTip": "codex\\Data\\Migrations\\20250530011522_PermitirNullEnAlmacenamientoSecundario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T01:15:22.284Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Pregunta.cs",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Models\\Pregunta.cs",
-              "RelativeDocumentMoniker": "codex\\Models\\Pregunta.cs",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Models\\Pregunta.cs",
-              "RelativeToolTip": "codex\\Models\\Pregunta.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T00:14:03.313Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "TipoDispositivo.cs",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Models\\TipoDispositivo.cs",
-              "RelativeDocumentMoniker": "codex\\Models\\TipoDispositivo.cs",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Models\\TipoDispositivo.cs",
-              "RelativeToolTip": "codex\\Models\\TipoDispositivo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T00:13:17.126Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\appsettings.json",
-              "RelativeDocumentMoniker": "codex\\appsettings.json",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\appsettings.json",
-              "RelativeToolTip": "codex\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-30T00:12:36.331Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "codex\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "codex\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T00:12:04.601Z"
+              "WhenOpened": "2025-05-30T00:25:15.019Z",
+              "EditorCaption": ""
             }
           ]
         }

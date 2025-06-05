@@ -83,37 +83,149 @@
                     </div>
                     <div class="form_side">
                         <h2>Te ayudamos desde cero</h2>
-                        <form>
-                            <label for="uso_computadora_nuevo">¿Para qué necesitas la computadora?</label><br />
-                            <select id="uso_computadora_nuevo" name="uso_computadora" required>
+                        <form method="post" asp-controller="Recomendacion" asp-action="Formulario">
+                            <label for="UsoPrincipal">¿Para qué necesitas la computadora?</label>
+                            <select id="UsoPrincipal" name="UsoPrincipal" required>
                                 <option value="">-- Selecciona una opción --</option>
-                                <option value="trabajo">Trabajar</option>
-                                <option value="estudio">Estudiar</option>
-                                <option value="jugar">Jugar</option>
-                                <option value="diseno">Diseño gráfico</option>
-                                <option value="otros">Otros</option>
+                                <option value="7">Gamer: (juegos de última o media generación)</option>
+                                <option value="1">Uso Personal: YouTube, redes sociales, videollamadas</option>
+                                <option value="2">Estudiante: trabajos, clases, investigación</option>
+                                <option value="3">Programación o desarrollo de software</option>
+                                <option value="4">Diseño gráfico: Photoshop, Illustrator, arte</option>
+                                <option value="5">Edición de video: Premiere, After Effects, DaVinci</option>
+                                <option value="6">Arquitectura, animación 3D, CAD, simulación</option>
                             </select>
 
-                            <div id="campo_otro" style="display: none; margin-top: 10px;">
-                                <label for="otro_uso_nuevo">¿Cuál es el uso que le quieres dar?</label><br />
-                                <input type="text" id="otro_uso_nuevo" name="otro_uso" />
+                            <label>¿Qué tipo de equipo prefieres?</label>
+                            <select name="NecesitaPortabilidad" required>
+                                <option value="">-- Selecciona una opción --</option>
+                                <option value="false">Computador de Mesa</option>
+                                <option value="true">Portátil</option>
+                            </select>
+
+
+                            <label>¿Usas muchas cosas al mismo tiempo?</label>
+                            <select name="RealizaMultitareaPesada" required>
+                                <option value="">-- Elige una opción --</option>
+                                <option value="true">Sí, suelo tener Zoom, Word, navegador, etc. al mismo tiempo</option>
+                                <option value="false">No, una cosa a la vez me basta</option>
+                            </select>
+
+                            <label>¿Vas a usar programas que requieren buena calidad de imagen?</label>
+                            <select name="UsaProgramasGraficos" required>
+                                <option value="">-- Elige una opción --</option>
+                                <option value="true">Sí, uso diseño, edición o juegos</option>
+                                <option value="false">No, nada muy exigente en imagen o video</option>
+                            </select>
+
+                            <label for="Presupuesto">¿Cuál es tu presupuesto máximo? (COP)</label>
+                            <input type="number" name="Presupuesto" id="Presupuesto" required min="100000" max="99000000" step="100000" />
+
+
+                            <!-- Personalización -->
+                            <div class="form-group">
+                                <label>¿Quieres personalizar más tu experiencia?</label>
+                                <select name="DeseaPersonalizar" class="form-control">
+                                    <option value="">-- Elige una opción --</option>
+                                    <option value="true">Sí, quiero más control y detalles técnicos</option>
+                                    <option value="false">No, solo quiero una recomendación sencilla</option>
+                                </select>
                             </div>
+                            <!-- Sección personalizada (se oculta hasta que el usuario diga que "no") -->
+                            <div id="seccionPersonalizada" style="display: none; margin-top: 30px;">
+                                <hr />
+                                <h4 class="text-muted">Personalización avanzada</h4>
 
-                            <label for="tipo_equipo_nuevo">¿Qué tipo de equipo prefieres?</label><br />
-                            <select id="tipo_equipo_nuevo" name="tipo_equipo" required>
-                                <option value="">-- Selecciona una opción --</option>
-                                <option value="PC">Computador de Mesa</option>
-                                <option value="Portatil">Portátil</option>
-                            </select>
+                                <div class="form-group mt-3">
+                                    <label>¿Tienes una marca preferida?</label>
+                                    <select class="form-control" name="MarcaPreferida">
+                                        <option value="">-- No tengo preferencia --</option>
+                                        <option>HP</option>
+                                        <option>ASUS</option>
+                                        <option>Dell</option>
+                                        <option>Acer</option>
+                                        <option>Lenovo</option>
+                                        <option>Apple</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group mt-3">
+                                    <label>¿Qué tamaño de pantalla prefieres?</label>
+                                    <select class="form-control" name="TamanoPantalla">
+                                        <option value="">-- Cualquiera está bien --</option>
+                                        <option>13 pulgadas o menos (ultraportátil)</option>
+                                        <option>14-15 pulgadas (equilibrada)</option>
+                                        <option>16 pulgadas o más (experiencia visual)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group mt-3">
+                                    <label>¿Cuánta duración de batería necesitas como mínimo?</label>
+                                    <select class="form-control" name="DuracionBateria">
+                                        <option value="">-- Cualquiera está bien --</option>
+                                        <option>4 horas</option>
+                                        <option>6 horas</option>
+                                        <option>8 horas o más</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group mt-3">
+                                    <label>¿Te gustaría que tenga teclado retroiluminado?</label>
+                                    <select class="form-control" name="TecladoRetroiluminado">
+                                        <option value="">-- No importa --</option>
+                                        <option value="true">Sí, lo prefiero</option>
+                                        <option value="false">No es necesario</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group mt-3">
+                                    <label>¿Qué tipo de almacenamiento prefieres?</label>
+                                    <select class="form-control" name="TipoAlmacenamiento">
+                                        <option value="">-- Cualquiera --</option>
+                                        <option>SSD (rápido)</option>
+                                        <option>HDD (más económico)</option>
+                                        <option>Ambos</option>
+                                    </select>
+                                </div>
+                            </div>
+                           
 
                             <div class="button">
                                 <button type="submit">Recomiéndame</button>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            const slider = document.getElementById("sliderPresupuesto");
+            const output = document.getElementById("valorPresupuesto");
+            const seccionPersonalizada = document.getElementById("seccionPersonalizada");
+            const selectorPersonalizacion = document.querySelector("select[name='DeseaPersonalizar']");
+
+            function formatCOP(value) {
+                return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            }
+
+            function updateLabel() {
+                output.textContent = formatCOP(slider.value);
+            }
+
+            slider.addEventListener("input", updateLabel);
+            window.onload = updateLabel;
+
+            selectorPersonalizacion.addEventListener("change", function () {
+                if (this.value === "true") {
+                    seccionPersonalizada.style.display = "block";
+                } else {
+                    seccionPersonalizada.style.display = "none";
+                }
+            });
+        </script>
+
 
         <!-- Modal: Ya tengo una idea -->
         <div id="form_modalOld" class="modal hidden">
