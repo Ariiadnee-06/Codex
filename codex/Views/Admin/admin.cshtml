@@ -156,7 +156,6 @@
                         <span asp-validation-for="ComputadoraActual.Marca" class="text-danger"></span>
                     </div>
 
-
                     <div class="form-group">
                         <label asp-for="ComputadoraActual.Modelo"></label>
                         <input asp-for="ComputadoraActual.Modelo" class="form-control" />
@@ -277,18 +276,6 @@
         </div>
     </div>
 
-    <!-- Modal de confirmación de eliminación -->
-    <div id="delete-confirmation-modal" class="modal hidden">
-        <div class="modal_content delete-modal-content">
-            <span id="close-delete-modal" class="close">&times;</span>
-            <h2>Confirmar Eliminación</h2>
-            <p>¿Estás seguro de que deseas eliminar este computador? Esta acción no se puede deshacer.</p>
-            <div class="delete-modal-buttons">
-                <button id="cancel-delete" class="cancel-button">Cancelar</button>
-                <button id="confirm-delete" class="confirm-button">Eliminar</button>
-            </div>
-        </div>
-    </div>
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -320,9 +307,9 @@
             <p>&copy; 2025 Codex | Todos los derechos reservados</p>
         </div>
     </footer>
-
-    <script src="@Url.Content("~/js/admin.js")"></script>
     <script src="@Url.Content("~/js/main.js")"></script>
+    <script src="@Url.Content("~/js/admin.js")"></script>
+    
     
 </body>
 </html>

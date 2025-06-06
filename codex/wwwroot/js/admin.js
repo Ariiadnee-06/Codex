@@ -2,61 +2,10 @@
 const tabButtons = document.querySelectorAll('.tab-button');
 const adminContents = document.querySelectorAll('.admin-content');
 
-/*-------------ABRIR Y CERRAR MODALES-------------*/
-
-document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("computer-modal");
-    const openModalBtn = document.getElementById("openAddModal");
-    const closeModalBtn = document.getElementById("close-computer-modal");
-
-    if (openModalBtn && closeModalBtn && modal) {
-        openModalBtn.addEventListener("click", function () {
-            modal.classList.remove("hidden");
-        });
-
-        closeModalBtn.addEventListener("click", function () {
-            modal.classList.add("hidden");
-        });
-    }
-});
-
-if (TempData["Mensaje"] != null) {
-    var mensaje = TempData["Mensaje"]?.ToString();
-    var tipo = TempData["Tipo"]?.ToString();
-
-    <text>
-        Swal.fire({
-            title: 'Aviso',
-        text: '@mensaje',
-        icon: '@tipo',
-        confirmButtonText: 'OK'
-                });
-    </text>
-
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    const editModal = document.getElementById("EditModal");
-    const openEditModalBtn = document.getElementById("openEditModal");
-    const closeEditModalBtn = document.getElementById("close-edit-modal");
-
-    if (openEditModalBtn && closeEditModalBtn && editModal) {
-        openEditModalBtn.addEventListener("click", function () {
-            editModal.classList.remove("hidden");
-        });
-
-        closeEditModalBtn.addEventListener("click", function () {
-            editModal.classList.add("hidden");
-        });
-    }
-});
-
-
 tabButtons.forEach(button => {
     button.addEventListener('click', () => {
         tabButtons.forEach(btn => btn.classList.remove('active'));
         adminContents.forEach(content => content.classList.remove('active'));
-
         button.classList.add('active');
         const tabId = button.getAttribute('data-tab');
         document.getElementById(`${tabId}-content`).classList.add('active');
@@ -75,10 +24,41 @@ const deleteModal = document.getElementById('delete-confirmation-modal');
 const closeDeleteModal = document.getElementById('close-delete-modal');
 const cancelDelete = document.getElementById('cancel-delete');
 
-// Función para bloquear/desbloquear el scroll del body
+// Función para bloquear/desbloquear scroll
 function toggleBodyScroll(lock) {
     document.body.style.overflow = lock ? 'hidden' : '';
 }
+
+// Abrir modal para agregar computador
+if (openAddModal) {
+    openAddModal.addEventListener('click', (e) => {
+        e.preventDefault();
+        computerModal.classList.remove('hidden');
+    });
+}
+
+if (closeDeleteModal) {
+    closeDeleteModal.addEventListener('click', () => {
+        computerModal.classList.add('hidden');
+    });
+}
+// Cerrar modal de computador
+closeComputerModal.addEventListener('click', () => {
+    computerModal.classList.add('hidden');
+    toggleBodyScroll(false);
+});
+
+// Cerrar modal de eliminación
+closeDeleteModal.addEventListener('click', () => {
+    deleteModal.classList.add('hidden');
+    toggleBodyScroll(false);
+});
+
+// Cancelar eliminación
+cancelDelete.addEventListener('click', () => {
+    deleteModal.classList.add('hidden');
+    toggleBodyScroll(false);
+});
 
 // Cerrar modales con Escape
 document.addEventListener('keydown', (e) => {
@@ -93,17 +73,8 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
-// Previsualización de imagen
-function updateImagePreview(imageUrl) {
-    const imagePreview = document.getElementById('image-preview');
-    imagePreview.innerHTML = imageUrl ? `<img src="${imageUrl}" alt="Vista previa">` : '';
-}
 
-document.getElementById('imagen').addEventListener('input', (e) => {
-    updateImagePreview(e.target.value);
-});
-
-// Prevenir cierre de modales al hacer clic dentro del contenido
+// Evitar cierre al hacer clic dentro del contenido del modal
 document.querySelectorAll('.modal_content').forEach(content => {
     content.addEventListener('click', (e) => e.stopPropagation());
 });
@@ -116,8 +87,28 @@ document.querySelectorAll('.modal').forEach(modal => {
     });
 });
 
+// Filtros
+const searchInput = document.getElementById('search-computer');
+const categoryFilter = document.getElementById('filter-category');
+const typeFilter = document.getElementById('filter-type');
+const searchButton = document.querySelector('.search-button');
 
-// Paginación (sin lógica de datos)
+// Función para aplicar filtros (sin lógica de backend aún)
+function applyFilters() {
+    // Esta función solo está lista para integrarse a un backend
+    // o recibir datos externos para filtrar.
+}
+
+// Eventos para filtros
+searchButton.addEventListener('click', applyFilters);
+categoryFilter.addEventListener('change', applyFilters);
+typeFilter.addEventListener('change', applyFilters);
+searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') applyFilters();
+});
+searchInput.addEventListener('input', applyFilters);
+
+// Paginación simulada (navegación visual)
 const prevPage = document.getElementById('prev-page');
 const nextPage = document.getElementById('next-page');
 const currentPageSpan = document.getElementById('current-page');
@@ -140,12 +131,12 @@ nextPage.addEventListener('click', () => {
     }
 });
 
-// Capitalización para futura lógica
+// Al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    totalPagesSpan.textContent = '1'; // puedes actualizar dinámicamente según tu backend
+});
+
+// Utilidad: capitalizar primera letra (útil si se usa más adelante)
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-// Cargar interfaz base
-document.addEventListener('DOMContentLoaded', () => {
-    totalPagesSpan.textContent = '1'; // Ficticio para la UI
-});

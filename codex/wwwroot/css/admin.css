@@ -345,7 +345,7 @@
     opacity: 0.7;
 }
 
-/* Modal customization for admin */
+/ /* Modal customization for admin */
 .modal {
     position: fixed;
     top: 0;
@@ -399,10 +399,10 @@
     color: white;
 }
 
-.delete-modal-content h2 {
-    margin-bottom: 20px;
-    color: #0E021F;
-}
+    .delete-modal-content h2 {
+        margin-bottom: 20px;
+        color: #0E021F;
+    }
 
 .delete-modal-buttons {
     display: flex;
@@ -422,9 +422,9 @@
     transition: background-color 0.3s;
 }
 
-.cancel-button:hover {
-    background-color: #424242;
-}
+    .cancel-button:hover {
+        background-color: #424242;
+    }
 
 .confirm-button {
     padding: 10px 25px;
@@ -436,9 +436,9 @@
     transition: background-color 0.3s;
 }
 
-.confirm-button:hover {
-    background-color: #1f1430;
-}
+    .confirm-button:hover {
+        background-color: #1f1430;
+    }
 
 /* Form customization */
 .image_side, .form_side {
