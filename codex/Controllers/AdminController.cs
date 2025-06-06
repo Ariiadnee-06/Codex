@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using codex.Data;
 using codex.Models;
+using codex.ViewModels;
 
 namespace codex.Controllers
 {
@@ -15,41 +16,56 @@ namespace codex.Controllers
 
         public IActionResult Admin()
         {
-            var computadoras = _context.Computadoras.ToList();
-            return View(computadoras);
+            var model = new AdminViewModel
+            {
+                Computadoras = _context.Computadoras.ToList(),
+                ComputadoraActual = new Computadora()
+            };
+            return View(model);
         }
 
         [HttpPost]
-        public IActionResult Create(Computadora computadora)
+        public IActionResult Create(AdminViewModel model)
         {
             if (ModelState.IsValid)
             {
-                _context.Computadoras.Add(computadora);
+                _context.Computadoras.Add(model.ComputadoraActual);
                 _context.SaveChanges();
+                return RedirectToAction("Admin");
             }
-            return RedirectToAction("Crud");
+            model.Computadoras = _context.Computadoras.ToList();
+            return View("Admin", model);
         }
 
         [HttpPost]
-        public IActionResult Update(Computadora computadora)
+        public IActionResult Edit(Computadora computadora)
         {
             if (ModelState.IsValid)
             {
                 _context.Computadoras.Update(computadora);
                 _context.SaveChanges();
+                return RedirectToAction("Admin");
             }
-            return RedirectToAction("Crud");
+            var model = new AdminViewModel
+            {
+                Computadoras = _context.Computadoras.ToList(),
+                ComputadoraActual = computadora
+            };
+            return View("Admin", model);
         }
 
+        [HttpPost]
         public IActionResult Delete(int id)
         {
-            var computadora = _context.Computadoras.Find(id);
-            if (computadora != null)
+            var compu = _context.Computadoras.Find(id);
+            if (compu != null)
             {
-                _context.Computadoras.Remove(computadora);
+                _context.Computadoras.Remove(compu);
                 _context.SaveChanges();
             }
-            return RedirectToAction("Crud");
+            return RedirectToAction("Index");
         }
     }
+
+
 }

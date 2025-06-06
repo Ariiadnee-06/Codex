@@ -1,4 +1,6 @@
-﻿@{
+﻿@model codex.ViewModels.AdminViewModel
+
+@{
     Layout = null;
 }
 
@@ -61,7 +63,6 @@
             <div class="admin-tabs">
                 <button class="tab-button active" data-tab="computadores">Computadores</button>
                 <button class="tab-button" data-tab="usuarios">Usuarios</button>
-                <button class="tab-button" data-tab="ventas">Ventas</button>
             </div>
 
             <div class="admin-content active" id="computadores-content">
@@ -90,19 +91,38 @@
                     <table class="admin-table">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Imagen</th>
-                                <th>Nombre</th>
-                                <th>Tipo</th>
-                                <th>Categoría</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Procesador</th>
+                                <th>Memoria RAM</th>
+                                <th>Almacenamiento</th>
                                 <th>Precio</th>
-                                <th>Stock</th>
-                                <th>Destacado</th>
                                 <th>Acciones</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody id="computers-table-body">
-                            <!-- Los datos se cargarán dinámicamente via JavaScript -->
+
+
+                            @foreach (var compu in Model.Computadoras)
+                            {
+                                <tr>
+                                    <td><input type="hidden" name="Id" value="@compu.Id" /></td>
+                                    <td><input name="Marca" value="@compu.Marca" class="form-control" /></td>
+                                    <td><input name="Modelo" value="@compu.Modelo" class="form-control" /></td>
+                                    <td><input name="Procesador" value="@compu.Procesador" class="form-control" /></td>
+                                    <td><input name="MemoriaRam" value="@compu.MemoriaRam" class="form-control" /></td>
+                                    <td><input name="AlmacenamientoPrincipal" value="@compu.AlmacenamientoPrincipal" class="form-control" /></td>
+                                    <td><input name="Precio" type="number" value="@compu.Precio" class="form-control" step="0.01" /></td>
+                                    <td>
+                                       <button type="button" class="action-button edit-button" id="openEditModal">Editar</button>
+                                        
+                                        <form asp-action="Delete" asp-route-id="@compu.Id" method="post" style="display:inline" onsubmit="return confirm('¿Seguro que quieres eliminar?');">
+                                            <button type="submit" class="action-button delete-button">Eliminar</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -120,80 +140,139 @@
                     <p>Panel de gestión de usuarios en desarrollo.</p>
                 </div>
             </div>
-
-            <div class="admin-content" id="ventas-content">
-                <div class="placeholder-message">
-                    <h2>Gestión de Ventas</h2>
-                    <p>Panel de gestión de ventas en desarrollo.</p>
-                </div>
-            </div>
         </section>
     </main>
 
-    <!-- Modal para agregar/editar computador -->
+    <!-- Modal para agregar computador -->
     <div id="computer-modal" class="modal hidden">
         <div class="modal_content">
             <span id="close-computer-modal" class="close">&times;</span>
             <h2 id="modal-title" style="padding: 20px 20px 0 20px; color: white; font-family: 'Coolvetica', sans-serif; font-weight: lighter;">Agregar Nuevo Computador</h2>
             <div class="modal_body">
-                <div class="image_side">
-                    <img src="@Url.Content("~/Imagenes/computer-illustration.png")" alt="Ilustración de computador">
-                    <div class="preview-container">
-                        <div id="image-preview"></div>
+                <form asp-action="Create" method="post">
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.Marca"></label>
+                        <input asp-for="ComputadoraActual.Marca" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.Marca" class="text-danger"></span>
                     </div>
-                </div>
 
-                <div class="form_side">
-                    <form id="computer-form">
-                        <input type="hidden" id="computer-id">
 
-                        <label for="nombre">Nombre del Computador</label>
-                        <input type="text" id="nombre" name="nombre" required>
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.Modelo"></label>
+                        <input asp-for="ComputadoraActual.Modelo" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.Modelo" class="text-danger"></span>
+                    </div>
 
-                        <label for="descripcion">Descripción</label>
-                        <textarea id="descripcion" name="descripcion" required></textarea>
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.TipoDispositivo"></label>
+                        <select asp-for="ComputadoraActual.TipoDispositivo" class="form-control" asp-items="Html.GetEnumSelectList<codex.Models.TipoDispositivo>()"></select>
+                        <span asp-validation-for="ComputadoraActual.TipoDispositivo" class="text-danger"></span>
+                    </div>
 
-                        <label for="tipo">Tipo</label>
-                        <select id="tipo" name="tipo" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="PC">Computador de Mesa</option>
-                            <option value="Portatil">Portátil</option>
-                        </select>
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.Procesador"></label>
+                        <input asp-for="ComputadoraActual.Procesador" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.Procesador" class="text-danger"></span>
+                    </div>
 
-                        <label for="categoria">Categoría</label>
-                        <select id="categoria" name="categoria" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="trabajo">Trabajo</option>
-                            <option value="estudio">Estudio</option>
-                            <option value="juegos">Juegos</option>
-                            <option value="diseno">Diseño</option>
-                            <option value="otros">Otros</option>
-                        </select>
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.GeneracionCPU"></label>
+                        <input asp-for="ComputadoraActual.GeneracionCPU" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.GeneracionCPU" class="text-danger"></span>
+                    </div>
 
-                        <label for="precio">Precio ($)</label>
-                        <input type="number" id="precio" name="precio" min="0" step="0.01" required>
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.MemoriaRam"></label>
+                        <input asp-for="ComputadoraActual.MemoriaRam" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.MemoriaRam" class="text-danger"></span>
+                    </div>
 
-                        <label for="stock">Stock</label>
-                        <input type="number" id="stock" name="stock" min="0" required>
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.TipoRam"></label>
+                        <input asp-for="ComputadoraActual.TipoRam" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.TipoRam" class="text-danger"></span>
+                    </div>
 
-                        <label for="imagen">Imagen URL</label>
-                        <input type="text" id="imagen" name="imagen" placeholder="URL de la imagen">
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.AlmacenamientoPrincipal"></label>
+                        <input asp-for="ComputadoraActual.AlmacenamientoPrincipal" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.AlmacenamientoPrincipal" class="text-danger"></span>
+                    </div>
 
-                        <label for="especificaciones">Especificaciones Técnicas</label>
-                        <textarea id="especificaciones" name="especificaciones" placeholder="Ingrese las especificaciones en formato JSON o texto"></textarea>
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.AlmacenamientoSecundario"></label>
+                        <input asp-for="ComputadoraActual.AlmacenamientoSecundario" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.AlmacenamientoSecundario" class="text-danger"></span>
+                    </div>
 
-                        <div class="destacado-container">
-                            <label for="destacado" class="checkbox-label">
-                                <input type="checkbox" id="destacado" name="destacado">
-                                Producto Destacado
-                            </label>
-                        </div>
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.TarjetaGrafica"></label>
+                        <input asp-for="ComputadoraActual.TarjetaGrafica" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.TarjetaGrafica" class="text-danger"></span>
+                    </div>
 
-                        <div class="button">
-                            <button type="submit" id="save-computer">Guardar</button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="form-group form-check">
+                        <input asp-for="ComputadoraActual.TieneGPUIntegrada" class="form-check-input" />
+                        <label asp-for="ComputadoraActual.TieneGPUIntegrada" class="form-check-label"></label>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.PantallaPulgadas"></label>
+                        <input asp-for="ComputadoraActual.PantallaPulgadas" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.PantallaPulgadas" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.ResolucionVertical"></label>
+                        <input asp-for="ComputadoraActual.ResolucionVertical" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.ResolucionVertical" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.ResolucionHorizontal"></label>
+                        <input asp-for="ComputadoraActual.ResolucionHorizontal" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.ResolucionHorizontal" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.Puertos"></label>
+                        <input asp-for="ComputadoraActual.Puertos" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.Puertos" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.Conectividad"></label>
+                        <input asp-for="ComputadoraActual.Conectividad" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.Conectividad" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.Precio"></label>
+                        <input asp-for="ComputadoraActual.Precio" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.Precio" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.ImagenUrl"></label>
+                        <input asp-for="ComputadoraActual.ImagenUrl" class="form-control" />
+                        <span asp-validation-for="ComputadoraActual.ImagenUrl" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.TipoRecomendado"></label>
+                        <select asp-for="ComputadoraActual.TipoRecomendado" class="form-control" asp-items="Html.GetEnumSelectList<codex.Models.TipoUso>()"></select>
+                        <span asp-validation-for="ComputadoraActual.TipoRecomendado" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ComputadoraActual.Descripcion"></label>
+                        <textarea asp-for="ComputadoraActual.Descripcion" class="form-control"></textarea>
+                        <span asp-validation-for="ComputadoraActual.Descripcion" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                </form>
+
             </div>
         </div>
     </div>
@@ -211,6 +290,49 @@
         </div>
     </div>
 
+    <!--Modal de Editar-->
+    <div class="modal hidden" id="EditModal">
+
+        <form id="edit-form" method="post">
+            <h2 class="text-edit">Editar Computadora</h2>
+            <input type="hidden" name="Id" id="edit-id" />
+
+            <div class="mb-3">
+                <label for="edit-marca" class="block font-medium">Marca</label>
+                <input type="text" name="Marca" id="edit-marca" class="form-input w-full border p-2 rounded" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="edit-modelo" class="block font-medium">Modelo</label>
+                <input type="text" name="Modelo" id="edit-modelo" class="form-input w-full border p-2 rounded" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="edit-procesador" class="block font-medium">Procesador</label>
+                <input type="text" name="Procesador" id="edit-procesador" class="form-input w-full border p-2 rounded" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="edit-ram" class="block font-medium">Memoria RAM</label>
+                <input type="text" name="MemoriaRam" id="edit-ram" class="form-input w-full border p-2 rounded" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="edit-almacenamiento" class="block font-medium">Almacenamiento</label>
+                <input type="text" name="AlmacenamientoPrincipal" id="edit-almacenamiento" class="form-input w-full border p-2 rounded" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="edit-precio" class="block font-medium">Precio</label>
+                <input type="number" step="0.01" name="Precio" id="edit-precio" class="form-input w-full border p-2 rounded" required />
+            </div>
+
+            <div class="flex">
+                <button type="button" class="btn btn-secondary" id="close-edit-modal">Cancelar</button>
+                <button type="submit" class="btn btn-success">Guardar cambios</button>
+            </div>
+        </form>
+    </div>
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -243,7 +365,8 @@
         </div>
     </footer>
 
-    <script src="@Url.Content("~/js/main.js")"></script>
     <script src="@Url.Content("~/js/admin.js")"></script>
+    <script src="@Url.Content("~/js/main.js")"></script>
+    
 </body>
 </html>
