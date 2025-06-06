@@ -98,16 +98,14 @@
                                 <th>Almacenamiento</th>
                                 <th>Precio</th>
                                 <th>Acciones</th>
-                                <th></th>
+                                
                             </tr>
                         </thead>
                         <tbody id="computers-table-body">
-
-
                             @foreach (var compu in Model.Computadoras)
                             {
+                                <form asp-action="Editar" asp-route-id="@compu.Id" method="post" onsubmit="return confirm('¿Seguro que quieres cambiar el componene?');">
                                 <tr>
-                                    <td><input type="hidden" name="Id" value="@compu.Id" /></td>
                                     <td><input name="Marca" value="@compu.Marca" class="form-control" /></td>
                                     <td><input name="Modelo" value="@compu.Modelo" class="form-control" /></td>
                                     <td><input name="Procesador" value="@compu.Procesador" class="form-control" /></td>
@@ -115,14 +113,16 @@
                                     <td><input name="AlmacenamientoPrincipal" value="@compu.AlmacenamientoPrincipal" class="form-control" /></td>
                                     <td><input name="Precio" type="number" value="@compu.Precio" class="form-control" step="0.01" /></td>
                                     <td>
-                                       <button type="button" class="action-button edit-button" id="openEditModal">Editar</button>
-                                        
+                                        <button type="submit" class="action-button edit-button">Editar</button>
                                         <form asp-action="Delete" asp-route-id="@compu.Id" method="post" style="display:inline" onsubmit="return confirm('¿Seguro que quieres eliminar?');">
                                             <button type="submit" class="action-button delete-button">Eliminar</button>
                                         </form>
                                     </td>
                                 </tr>
+                                </form>
+                                
                             }
+
                         </tbody>
                     </table>
                 </div>
@@ -288,50 +288,6 @@
                 <button id="confirm-delete" class="confirm-button">Eliminar</button>
             </div>
         </div>
-    </div>
-
-    <!--Modal de Editar-->
-    <div class="modal hidden" id="EditModal">
-
-        <form id="edit-form" method="post">
-            <h2 class="text-edit">Editar Computadora</h2>
-            <input type="hidden" name="Id" id="edit-id" />
-
-            <div class="mb-3">
-                <label for="edit-marca" class="block font-medium">Marca</label>
-                <input type="text" name="Marca" id="edit-marca" class="form-input w-full border p-2 rounded" required />
-            </div>
-
-            <div class="mb-3">
-                <label for="edit-modelo" class="block font-medium">Modelo</label>
-                <input type="text" name="Modelo" id="edit-modelo" class="form-input w-full border p-2 rounded" required />
-            </div>
-
-            <div class="mb-3">
-                <label for="edit-procesador" class="block font-medium">Procesador</label>
-                <input type="text" name="Procesador" id="edit-procesador" class="form-input w-full border p-2 rounded" required />
-            </div>
-
-            <div class="mb-3">
-                <label for="edit-ram" class="block font-medium">Memoria RAM</label>
-                <input type="text" name="MemoriaRam" id="edit-ram" class="form-input w-full border p-2 rounded" required />
-            </div>
-
-            <div class="mb-3">
-                <label for="edit-almacenamiento" class="block font-medium">Almacenamiento</label>
-                <input type="text" name="AlmacenamientoPrincipal" id="edit-almacenamiento" class="form-input w-full border p-2 rounded" required />
-            </div>
-
-            <div class="mb-3">
-                <label for="edit-precio" class="block font-medium">Precio</label>
-                <input type="number" step="0.01" name="Precio" id="edit-precio" class="form-input w-full border p-2 rounded" required />
-            </div>
-
-            <div class="flex">
-                <button type="button" class="btn btn-secondary" id="close-edit-modal">Cancelar</button>
-                <button type="submit" class="btn btn-success">Guardar cambios</button>
-            </div>
-        </form>
     </div>
     <!-- Footer -->
     <footer class="footer">

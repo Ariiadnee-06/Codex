@@ -36,22 +36,38 @@ namespace codex.Controllers
             model.Computadoras = _context.Computadoras.ToList();
             return View("Admin", model);
         }
-
         [HttpPost]
-        public IActionResult Edit(Computadora computadora)
+        public IActionResult Editar(int id, Computadora nuevaCompu)
         {
-            if (ModelState.IsValid)
+            var compuExistente = _context.Computadoras.Find(id);
+
+            if (compuExistente == null)
+                return NotFound();
+
+            if (
+                compuExistente.Marca == nuevaCompu.Marca &&
+                compuExistente.Modelo == nuevaCompu.Modelo &&
+                compuExistente.Procesador == nuevaCompu.Procesador &&
+                compuExistente.MemoriaRam == nuevaCompu.MemoriaRam &&
+                compuExistente.AlmacenamientoPrincipal == nuevaCompu.AlmacenamientoPrincipal &&
+                compuExistente.Precio == nuevaCompu.Precio
+            )
             {
-                _context.Computadoras.Update(computadora);
-                _context.SaveChanges();
-                return RedirectToAction("Admin");
+                TempData["Mensaje"] = "El componente no tiene elementos por editar.";
+                return RedirectToAction("Admin"); 
             }
-            var model = new AdminViewModel
-            {
-                Computadoras = _context.Computadoras.ToList(),
-                ComputadoraActual = computadora
-            };
-            return View("Admin", model);
+
+            compuExistente.Marca = nuevaCompu.Marca;
+            compuExistente.Modelo = nuevaCompu.Modelo;
+            compuExistente.Procesador = nuevaCompu.Procesador;
+            compuExistente.MemoriaRam = nuevaCompu.MemoriaRam;
+            compuExistente.AlmacenamientoPrincipal = nuevaCompu.AlmacenamientoPrincipal;
+            compuExistente.Precio = nuevaCompu.Precio;
+
+            _context.SaveChanges();
+
+            TempData["Mensaje"] = "Componente editado correctamente.";
+            return RedirectToAction("Admin");
         }
 
         [HttpPost]

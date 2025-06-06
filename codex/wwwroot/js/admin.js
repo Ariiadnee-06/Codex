@@ -20,6 +20,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+if (TempData["Mensaje"] != null) {
+    var mensaje = TempData["Mensaje"]?.ToString();
+    var tipo = TempData["Tipo"]?.ToString();
+
+    <text>
+        Swal.fire({
+            title: 'Aviso',
+        text: '@mensaje',
+        icon: '@tipo',
+        confirmButtonText: 'OK'
+                });
+    </text>
+
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const editModal = document.getElementById("EditModal");
     const openEditModalBtn = document.getElementById("openEditModal");

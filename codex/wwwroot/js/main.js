@@ -15,6 +15,7 @@ if (navClose) {
     });
 }
 
+
 // ----------------- FORMULARIOS SIN VALIDACIÓN DE SESIÓN -----------------
 const openFormBtn = document.getElementById('openNew');
 const formModal = document.getElementById('form_modal');
