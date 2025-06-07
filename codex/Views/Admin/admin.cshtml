@@ -25,7 +25,8 @@
     <!--HEADER-->
     <header class="header" id="header">
         <nav class="nav_container">
-            <a href="@Url.Content("~/index")" class="nav_logo">Codex</a>
+            <a href="@Url.Action("Index", "Home")" class="nav_logo">Codex</a>
+
             <div class="nav_menu" id="nav_menu">
                 <div class="nav_close" id="nav_close">
                     <img src="@Url.Content("~/Imagenes/circulo-marca-x (1).png")" alt="Cerrar">
@@ -33,7 +34,8 @@
 
                 <ul class="nav_list">
                     <li>
-                        <a href="@Url.Content("~/index")" class="nav_link">
+                        <a href="@Url.Action("Index", "Home")" class="nav_logo">Codex</a>
+
                             <img src="@Url.Content("~/Imagenes/home.png")" alt="Inicio" class="nav_icon">
                             <span class="nav_text">Inicio</span>
                         </a>
@@ -274,7 +276,7 @@
             <div class="footer-section-links">
                 <h2>Conexiones</h2>
                 <ul>
-                    <li><a href="@Url.Content("~/index")">Inicio</a></li>
+                    <a href="@Url.Action("Index", "Home")" class="nav_logo">Codex</a>
                     <li><a href="#">Servicios</a></li>
                     <li><a href="#">Sobre nosotros</a></li>
                 </ul>
