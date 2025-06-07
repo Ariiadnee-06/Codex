@@ -1,0 +1,254 @@
+﻿@model List<codex.Models.Computadora>
+@using System.Text.Json
+
+
+@{
+    ViewData["Title"] = "Catálogo de Computadoras";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="catalogo-section">
+    <h1 class="Titulo">Catálogo de Computadoras</h1>
+    <div class="catalogo-container">
+        @foreach (var pc in Model)
+        {
+            <div class="pc-card">
+                <img src="@pc.ImagenUrl" alt="Imagen de @pc.Marca @pc.Modelo" class="pc-img" />
+                <h2 class="pc-nombre">@pc.Marca @pc.Modelo</h2>
+                <p class="pc-desc">@pc.Descripcion</p>
+                <p class="pc-precio">Precio: $@String.Format("{0:N0}", pc.Precio)</p>
+                <button class="pc-boton" onclick='mostrarDetalle(@Html.Raw(JsonSerializer.Serialize(pc)))'>Ver detalles</button>
+
+
+            </div>
+        }
+
+    </div>
+   
+
+</section>
+
+<div id="detalle-modal">
+    <div class="detalle-modal-overlay" id="detalleOverlay"></div>
+    <div class="detalle-modal-contenido">
+        <span class="detalle-modal-cerrar" id="cerrarModal">&times;</span>
+        <div class="detalle-modal-body">
+            <div class="detalle-modal-imagen">
+                <img id="modalImagen" src="" alt="Imagen producto">
+            </div>
+            <div class="detalle-modal-info">
+                <h2 id="modalTitulo"></h2>
+                <p id="modalDescripcion"></p>
+                <ul id="modalDetallesTecnicos"></ul>
+                <p id="modalPrecio" class="precio"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+            document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("detalle-modal");
+        const cerrar = document.getElementById("cerrarModal");
+
+        cerrar.onclick = () => {
+            modal.style.display = "none";
+            document.body.style.overflow = "";
+        };
+
+        window.mostrarDetalle = function(pc) {
+            document.getElementById("modalImagen").src = pc.ImagenUrl;
+            document.getElementById("modalTitulo").innerText = `${pc.Marca} ${pc.Modelo}`;
+            document.getElementById("modalDescripcion").innerText = pc.Descripcion || 'Sin descripción';
+            document.getElementById("modalPrecio").innerText = `Precio: $${Number(pc.Precio).toLocaleString()}`;
+
+            const detalles = [
+                `Procesador: ${pc.Procesador}`,
+                `RAM: ${pc.MemoriaRam} ${pc.TipoRam || ''}`,
+                `Dispositivo: ${pc.TipoDispositivo}`,
+                `Almacenamiento: ${pc.AlmacenamientoPrincipal}${pc.AlmacenamientoSecundario ? ' + ' + pc.AlmacenamientoSecundario : ''}`,
+                `GPU: ${pc.TarjetaGrafica}${pc.TieneGPUIntegrada ? ' (Integrada)' : ''}`,
+                `Pantalla: ${pc.PantallaPulgadas || 'N/A'}"`,
+                `Resolución: ${pc.ResolucionHorizontal || '?'} x ${pc.ResolucionVertical || '?'}`,
+                `Puertos: ${pc.Puertos || 'N/A'}`,
+                `Conectividad: ${pc.Conectividad || 'N/A'}`,
+                `Uso recomendado: ${pc.TipoRecomendado}`
+            ];
+
+            const ul = document.getElementById("modalDetallesTecnicos");
+            ul.innerHTML = '';
+            detalles.forEach(d => {
+                const li = document.createElement('li');
+                li.textContent = d;
+                ul.appendChild(li);
+            });
+
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        };
+    });
+
+
+</script>
+
+<style>
+    .catalogo-section {
+        padding: 80px 30px;
+        background-color: #0E021F;
+        color: white;
+        min-height: 100vh;
+    }
+
+    .catalogo-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .pc-card {
+        background-color: #1e0f2b;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+        font-family: "Lined";
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .pc-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+    .pc-img {
+        width: 100%;
+        max-height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .pc-nombre {
+        font-family: "Coolvetica";
+        margin-top: 15px;
+        font-size: 24px;
+        color: #f6e6fc;
+    }
+
+    .pc-desc {
+        margin: 10px 0;
+        font-size: 16px;
+        color: #ccc;
+    }
+
+    .pc-precio {
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .pc-boton {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        border-radius: 30px;
+        background-color: white;
+        color: #0E021F;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+        .pc-boton:hover {
+            background-color: #f6e6fc;
+            transform: scale(1.05);
+        }
+
+
+    #detalle-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        font-family: "Coolvetica", sans-serif;
+    }
+
+    .detalle-modal-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(14, 2, 31, 0.85);
+        backdrop-filter: blur(3px);
+    }
+
+    .detalle-modal-contenido {
+        position: relative;
+        z-index: 1;
+        margin: 50px auto;
+        max-width: 900px;
+        background: #1e0f2b;
+        color: white;
+        border-radius: 20px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 25px rgba(246, 230, 252, 0.2);
+    }
+
+    .detalle-modal-cerrar {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 32px;
+        cursor: pointer;
+        color: #f6e6fc;
+    }
+
+    .detalle-modal-body {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .detalle-modal-imagen img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 12px;
+    }
+
+    .detalle-modal-info {
+        flex: 1;
+    }
+
+        .detalle-modal-info h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: #f6e6fc;
+        }
+
+        .detalle-modal-info p,
+        .detalle-modal-info ul {
+            font-family: "Lined", sans-serif;
+            font-size: 18px;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .detalle-modal-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .detalle-modal-info li::before {
+            content: "• ";
+            color: #f6e6fc;
+        }
+
+    #modalPrecio {
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+    }
+
+</style>

@@ -150,5 +150,17 @@ namespace codex.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult Catalogo()
+        {
+            var todasLasComputadoras = _context.Computadoras.ToList();
+            return View("Catalogo", todasLasComputadoras);
+        }
+
+
     }
+
+
 }
+
+

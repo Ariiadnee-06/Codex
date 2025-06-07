@@ -67,7 +67,7 @@
                 <div class="Imagen_Container">
                     <div class="Img">
                         <img src="~/imagenes/Mobile UI-UX-amico.png" alt="Idea previa" />
-                        <button class="click_Aqui" id="openOld">Sigamos con el proceso</button>
+                        <a href="/Recomendacion/Catalogo" class="click_Aqui">Ver Catálogo de Computadoras</a>
                     </div>
                 </div>
             </div>
@@ -227,45 +227,8 @@
         </script>
 
 
-        <!-- Modal: Ya tengo una idea -->
-        <div id="form_modalOld" class="modal hidden">
-            <div class="modal_content">
-                <span id="close_modalOld" class="close">&times;</span>
-                <div class="modal_body">
-                    <div class="image_side">
-                        <img src="~/imagenes/image-removebg-preview (5).png" alt="Asistencia" />
-                    </div>
-                    <div class="form_side">
-                        <h2>Cuéntanos tu idea</h2>
-                        <form>
-                            <label for="modelo_idea">¿Qué computadora tenías en mente?</label><br />
-                            <input type="text" id="modelo_idea" name="modelo_idea" />
-
-                            <label for="razon_idea">¿Por qué tenías en mente esta computadora?</label><br />
-                            <select id="razon_idea" name="razon_idea" required>
-                                <option value="">-- Selecciona una opción --</option>
-                                <option value="trabajo">Trabajar</option>
-                                <option value="estudio">Estudiar</option>
-                                <option value="jugar">Jugar</option>
-                                <option value="diseno">Diseño gráfico</option>
-                                <option value="otros">Otros</option>
-                            </select>
-
-                            <label for="tipo_equipo_idea">¿Qué tipo de equipo prefieres?</label><br />
-                            <select id="tipo_equipo_idea" name="tipo_equipo" required>
-                                <option value="">-- Selecciona una opción --</option>
-                                <option value="PC">Computador de Mesa</option>
-                                <option value="Portatil">Portátil</option>
-                            </select>
-
-                            <div class="button">
-                                <button type="submit">Recomiéndame</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
+            
     </main>
 
     <!-- FOOTER -->
