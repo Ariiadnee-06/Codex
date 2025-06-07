@@ -1,14 +1,16 @@
 ﻿@model List<codex.Models.Computadora>
 @{
-    ViewData["Title"] = "Recomendaciones para ti";
+    ViewData["Title"] = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container py-4 resultado-bg">
-    <h2 class="text-center mb-4 resultado-title">@ViewData["Title"]</h2>
+
+<div class="resultado-bg container py-4">
+    <h2 class="resultado-title mb-4 text-center">@ViewData["Title"]</h2>
 
     @if (!Model.Any())
     {
-        <div class="alert alert-info text-center resultado-alert" role="alert">
+        <div class="alert alert-info resultado-alert text-center" role="alert">
             <i class="fas fa-info-circle me-2"></i>
             No encontramos computadoras que coincidan con tus respuestas. Intenta ajustar el presupuesto o necesidades.
         </div>
@@ -19,9 +21,9 @@
             @foreach (var item in Model)
             {
                 <div class="col-md-4">
-                    <div class="card h-100 shadow-sm resultado-card">
+                    <div class="card h-100 resultado-card shadow-sm">
                         <div class="position-relative">
-                            <img src="@item.ImagenUrl" class="card-img-top p-3 resultado-img" alt="Imagen de @item.Modelo" />
+                            <img src="@item.ImagenUrl" class="card-img-top resultado-img p-3" alt="Imagen de @item.Modelo" />
                             <button class="btn-favorito" onclick="toggleFavorito('@item.Id', '@item.Marca @item.Modelo', '@item.ImagenUrl', '@item.Precio.ToString(System.Globalization.CultureInfo.InvariantCulture)', '@item.Descripcion')">
                                 <i class="fas fa-star"></i>
                             </button>
