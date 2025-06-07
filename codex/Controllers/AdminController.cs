@@ -97,7 +97,7 @@ namespace codex.Controllers
                 _context.Computadoras.Remove(compu);
                 _context.SaveChanges();
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Admin");
         }
     }
 
