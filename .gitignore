@@ -1,0 +1,53 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Compilación
+bin/
+obj/
+out/
+TestResults/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.tmp
+*.dbmdl
+
+# Archivos de publicación
+publish/
+app.publish/
+codex/bin/
+codex/obj/
+
+# Archivos de Razor generados
+**/scopedcss/
+**/*.rz.scp.css
+
+# Archivos de configuración locales
+*.local.json
+*.local.settings.json
+appsettings.Development.json
+
+# Paquetes NuGet descargados
+packages/
+*.nupkg
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+
+# Logs
+*.log
+
+# Archivos generados por JetBrains Rider o VS Code
+.idea/
+*.code-workspace
+.vscode/
+
+# Otros
+*.DS_Store
+Thumbs.db

@@ -29,23 +29,24 @@ namespace codex.Controllers
         [HttpPost]
         public IActionResult Create(AdminViewModel model)
         {
-            Console.WriteLine("🟡 ENTRÓ AL MÉTODO CREATE");
+            Console.WriteLine("ENTRÓ AL MÉTODO CREATE");
 
             if (ModelState.IsValid)
             {
-                Console.WriteLine("✅ ModelState es válido");
+                /// para cuando el modelo es válido es decir, cuando no hay errores de validación
+                Console.WriteLine("ModelState es válido");
 
                 _context.Computadoras.Add(model.ComputadoraActual);
                 _context.SaveChanges();
 
-                Console.WriteLine("💾 Computadora guardada exitosamente");
+                Console.WriteLine("Computadora guardada exitosamente");
                 return RedirectToAction("Admin");
             }
 
-            Console.WriteLine("❌ ModelState inválido");
+            Console.WriteLine("ModelState inválido");
             foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
             {
-                Console.WriteLine("❗ Error: " + error.ErrorMessage);
+                Console.WriteLine("Error: " + error.ErrorMessage);
             }
 
             model.Computadoras = _context.Computadoras.ToList();
