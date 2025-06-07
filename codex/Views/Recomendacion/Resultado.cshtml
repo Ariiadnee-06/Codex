@@ -3,29 +3,106 @@
     ViewData["Title"] = "Recomendaciones para ti";
 }
 
-<h2>@ViewData["Title"]</h2>
+<div class="container py-4 resultado-bg">
+    <h2 class="text-center mb-4 resultado-title">@ViewData["Title"]</h2>
 
-@if (!Model.Any())
-{
-    <p>No encontramos computadoras que coincidan con tus respuestas. Intenta ajustar el presupuesto o necesidades.</p>
-}
-else
-{
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <img src="@item.ImagenUrl" class="card-img-top" alt="Imagen de @item.Modelo" />
-                    <div class="card-body">
-                        <h5 class="card-title">@item.Marca @item.Modelo</h5>
-                        <p>@item.Descripcion</p>
-                     
-                        <p><strong>Precio:</strong> @item.Precio.ToString("C0", new System.Globalization.CultureInfo("es-CO"))</p>
-
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center resultado-alert" role="alert">
+            <i class="fas fa-info-circle me-2"></i>
+            No encontramos computadoras que coincidan con tus respuestas. Intenta ajustar el presupuesto o necesidades.
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm resultado-card">
+                        <div class="position-relative">
+                            <img src="@item.ImagenUrl" class="card-img-top p-3 resultado-img" alt="Imagen de @item.Modelo" />
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title resultado-card-title">@item.Marca @item.Modelo</h5>
+                            <p class="card-text flex-grow-1 resultado-desc">@item.Descripcion</p>
+                            <div class="mt-auto">
+                                <p class="card-text">
+                                    <span class="badge resultado-precio">
+                                        @item.Precio.ToString("C0", new System.Globalization.CultureInfo("es-CO"))
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
-    </div>
-}
+            }
+        </div>
+    }
+</div>
+
+<style>
+    .resultado-bg {
+        background-color: #0E021F;
+        min-height: 100vh;
+        border-radius: 18px;
+    }
+    .resultado-title {
+        color: #f6e6fc;
+        font-family: 'Coolvetica', 'Lined', sans-serif;
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+        font-weight: lighter;
+    }
+    .resultado-alert {
+        background-color: #f6e6fc;
+        color: #130724;
+        border: none;
+        font-family: 'Lined', sans-serif;
+        font-size: 1.2rem;
+        border-radius: 12px;
+    }
+    .resultado-card {
+        background: #f6e6fc;
+        border-radius: 18px;
+        border: 2px solid #130724;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 2px 12px rgba(14,2,31,0.10);
+    }
+    .resultado-card:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 6px 24px rgba(14,2,31,0.18);
+        border-color: #be9fe1;
+    }
+    .resultado-img {
+        background: #fff;
+        border-radius: 12px;
+        height: 200px;
+        object-fit: contain;
+        border: 1px solid #e0d6f7;
+    }
+    .resultado-card-title {
+        color: #130724;
+        font-family: 'Coolvetica', 'Lined', sans-serif;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+    }
+    .resultado-desc {
+        color: #0E021F;
+        font-size: 1.05rem;
+        font-family: 'Lined', sans-serif;
+        margin-bottom: 0.7rem;
+    }
+    .resultado-precio {
+        background: #130724;
+        color: #f6e6fc;
+        font-size: 1.15rem;
+        padding: 0.5em 1em;
+        border-radius: 12px;
+        font-family: 'Coolvetica', 'Lined', sans-serif;
+        letter-spacing: 1px;
+        box-shadow: 0 2px 8px rgba(14,2,31,0.10);
+    }
+</style>

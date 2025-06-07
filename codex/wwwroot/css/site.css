@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('/Fuente/Coolvetica Rg.otf');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Lined';
+    src: url('/Fuente/Lined.ttf');
+    font-display: swap;
+}
+
 html {
   font-size: 14px;
 }
