@@ -18,12 +18,12 @@ namespace codex.Models
         [Required]
         public string Procesador { get; set; }
 
-        public string GeneracionCPU { get; set; }
+        public string? GeneracionCPU { get; set; }
 
         [Required]
         public string MemoriaRam { get; set; }
 
-        public string TipoRam { get; set; }
+        public string? TipoRam { get; set; }
 
         [Required]
         public string AlmacenamientoPrincipal { get; set; }
@@ -37,22 +37,22 @@ namespace codex.Models
 
         public bool TieneGPUIntegrada { get; set; }
 
-        public double PantallaPulgadas { get; set; }
+        public double? PantallaPulgadas { get; set; }
 
-        public int ResolucionVertical { get; set; }
-        public int ResolucionHorizontal { get; set; }
+        public int? ResolucionVertical { get; set; }
+        public int? ResolucionHorizontal { get; set; }
 
-        public string Puertos { get; set; }
+        public string? Puertos { get; set; }
 
-        public string Conectividad { get; set; }
+        public string? Conectividad { get; set; }
 
         public decimal Precio { get; set; }
 
-        public string ImagenUrl { get; set; }
+        public string? ImagenUrl { get; set; }
 
         [Required]
         public TipoUso TipoRecomendado { get; set; }
 
-        public string Descripcion { get; set; }
+        public string? Descripcion { get; set; }
     }
 }

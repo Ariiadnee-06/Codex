@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using codex.Data;
+﻿using codex.Data;
 using codex.Models;
 using codex.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace codex.Controllers
 {
@@ -25,17 +25,34 @@ namespace codex.Controllers
         }
 
         [HttpPost]
+
+        [HttpPost]
         public IActionResult Create(AdminViewModel model)
         {
+            Console.WriteLine("🟡 ENTRÓ AL MÉTODO CREATE");
+
             if (ModelState.IsValid)
             {
+                Console.WriteLine("✅ ModelState es válido");
+
                 _context.Computadoras.Add(model.ComputadoraActual);
                 _context.SaveChanges();
+
+                Console.WriteLine("💾 Computadora guardada exitosamente");
                 return RedirectToAction("Admin");
             }
+
+            Console.WriteLine("❌ ModelState inválido");
+            foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+            {
+                Console.WriteLine("❗ Error: " + error.ErrorMessage);
+            }
+
             model.Computadoras = _context.Computadoras.ToList();
             return View("Admin", model);
         }
+
+
         [HttpPost]
         public IActionResult Editar(int id, Computadora nuevaCompu)
         {
@@ -54,7 +71,7 @@ namespace codex.Controllers
             )
             {
                 TempData["Mensaje"] = "El componente no tiene elementos por editar.";
-                return RedirectToAction("Admin"); 
+                return RedirectToAction("Admin");
             }
 
             compuExistente.Marca = nuevaCompu.Marca;
