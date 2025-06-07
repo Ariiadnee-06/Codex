@@ -113,7 +113,10 @@
                 {
                     <div class="col-md-4">
                         <div class="card resultado-card">
-                            <img src="@item.ImagenUrl" alt="Imagen de @item.Modelo" class="card-img-top resultado-img" />
+                            <img src="@Url.Content("~/Imagenes/Computadoras/" + item.ImagenUrl)"
+                                 class="card-img-top resultado-img p-3"
+                                 alt="Imagen de @item.Modelo" />
+
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title resultado-card-title">@item.Marca @item.Modelo</h5>
                                 <p class="card-text resultado-desc flex-grow-1">@item.Descripcion</p>

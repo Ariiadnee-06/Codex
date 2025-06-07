@@ -29,7 +29,6 @@ namespace codex.Data.Seeders
                     Puertos = "USB x2, HDMI, SD",
                     Conectividad = "Wi-Fi, Bluetooth",
                     Precio = 899000,
-                    ImagenUrl = "https://example.com/hp-stream.jpg",
                     TipoRecomendado = TipoUso.Basico,
                     Descripcion = "Ideal para navegación, tareas básicas y videollamadas."
                 },
@@ -51,7 +50,6 @@ namespace codex.Data.Seeders
                     Puertos = "USB 3.1, HDMI",
                     Conectividad = "Wi-Fi AC, Bluetooth 4.2",
                     Precio = 1599000,
-                    ImagenUrl = "https://example.com/lenovo-ideapad3.jpg",
                     TipoRecomendado = TipoUso.Estudiante,
                     Descripcion = "Perfecta para clases virtuales y productividad académica."
                 },
@@ -73,7 +71,6 @@ namespace codex.Data.Seeders
                     Puertos = "USB-C, HDMI, SD",
                     Conectividad = "Wi-Fi 6, Bluetooth 5",
                     Precio = 2299000,
-                    ImagenUrl = "https://example.com/dell-inspiron.jpg",
                     TipoRecomendado = TipoUso.Programador,
                     Descripcion = "Ideal para programación, desarrollo y multitarea."
                 },
@@ -95,7 +92,6 @@ namespace codex.Data.Seeders
                     Puertos = "HDMI, USB-C, microSD",
                     Conectividad = "Wi-Fi 6, Bluetooth 5.2",
                     Precio = 3999000,
-                    ImagenUrl = "https://example.com/asus-vivobookpro.jpg",
                     TipoRecomendado = TipoUso.Disenador,
                     Descripcion = "Diseñada para creativos que usan Photoshop e Illustrator."
                 },
@@ -117,7 +113,6 @@ namespace codex.Data.Seeders
                     Puertos = "USB-C, HDMI, lector SD",
                     Conectividad = "Wi-Fi 6E, Bluetooth 5.2",
                     Precio = 6990000,
-                    ImagenUrl = "https://example.com/msi-creator.jpg",
                     TipoRecomendado = TipoUso.EditorVideo,
                     Descripcion = "Potente estación para edición 4K y renderizado en Premiere."
                 },
@@ -139,7 +134,6 @@ namespace codex.Data.Seeders
                     Puertos = "Thunderbolt, HDMI, USB",
                     Conectividad = "Wi-Fi 6, Bluetooth 5",
                     Precio = 7590000,
-                    ImagenUrl = "https://example.com/hp-zbook.jpg",
                     TipoRecomendado = TipoUso.TecnicoAvanzado,
                     Descripcion = "Workstation para CAD, simulaciones y modelado 3D exigente."
                 },
@@ -162,11 +156,16 @@ namespace codex.Data.Seeders
                     Puertos = "Ethernet, HDMI, USB 3.2",
                     Conectividad = "Wi-Fi 6, Bluetooth",
                     Precio = 4590000,
-                    ImagenUrl = "https://example.com/acer-nitro5.jpg",
                     TipoRecomendado = TipoUso.Gamer,
                     Descripcion = "Perfecta para gaming fluido, streaming y multitarea extrema."
                 }
             };
+
+            // Asignar imágenes como 1.jpg, 2.jpg, 3.jpg...
+            for (int i = 0; i < computadoras.Count; i++)
+            {
+                computadoras[i].ImagenUrl = $"{i + 1}.jpg";
+            }
 
             context.Computadoras.AddRange(computadoras);
             context.SaveChanges();
