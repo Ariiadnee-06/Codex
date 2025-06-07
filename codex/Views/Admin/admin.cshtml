@@ -4,6 +4,9 @@
     Layout = null;
 }
 
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -57,8 +60,112 @@
         <section class="admin-container">
             <div class="admin-header">
                 <h2>Gestión de Computadores</h2>
-                <button id="add-computer-button" class="add-button">Agregar Computador</button>
+                <button class="admin-button" onclick="abrirModal()">Agregar Computadora</button>
             </div>
+
+            <div id="AgregarModal" class="modal hidden">
+                <div class="modal_content">
+                    <span class="close" onclick="cerrarModal()">&times;</span>
+                    <div class="modal_body">
+                        <div class="form_side">
+                            <h2>Agregar Nueva Computadora</h2>
+                            <form method="post" asp-action="Create" asp-controller="Admin">
+                                <label>Marca</label>
+                                <select name="ComputadoraActual.Marca" required>
+                                    <option value="HP">HP</option>
+                                    <option value="Lenovo">Lenovo</option>
+                                    <option value="Asus">Asus</option>
+                                    <option value="Acer">Acer</option>
+                                    <option value="Dell">Dell</option>
+                                </select>
+
+                                <label>Modelo</label>
+                                <input name="ComputadoraActual.Modelo" required />
+
+                                <label>Tipo de Dispositivo</label>
+                                <select name="ComputadoraActual.TipoDispositivo">
+                                    <option value="1">Portátil</option>
+                                    <option value="2">Escritorio</option>
+                                    <option value="3">All In One</option>
+                                    <option value="4">Mini PC</option>
+                                    <option value="5">Workstation</option>
+                                    <option value="6">Convertible 2 en 1</option>
+                                </select>
+
+                                <label>Procesador</label>
+                                <select name="ComputadoraActual.Procesador">
+                                    <option value="Intel Core i3">Intel Core i3</option>
+                                    <option value="Intel Core i5">Intel Core i5</option>
+                                    <option value="Intel Core i7">Intel Core i7</option>
+                                    <option value="Ryzen 3">Ryzen 3</option>
+                                    <option value="Ryzen 5">Ryzen 5</option>
+                                    <option value="Ryzen 7">Ryzen 7</option>
+                                </select>
+
+                                <label>RAM</label>
+                                <select name="ComputadoraActual.MemoriaRam">
+                                    <option value="4GB">4GB</option>
+                                    <option value="8GB">8GB</option>
+                                    <option value="16GB">16GB</option>
+                                    <option value="32GB">32GB</option>
+                                </select>
+
+                                <label>Almacenamiento Principal</label>
+                                <select name="ComputadoraActual.AlmacenamientoPrincipal">
+                                    <option value="256GB SSD">256GB SSD</option>
+                                    <option value="512GB SSD">512GB SSD</option>
+                                    <option value="1TB HDD">1TB HDD</option>
+                                    <option value="1TB SSD">1TB SSD</option>
+                                </select>
+
+                                <label>Tarjeta Gráfica</label>
+                                <select name="ComputadoraActual.TarjetaGrafica">
+                                    <option value="Integrada">Integrada</option>
+                                    <option value="GTX 1650">GTX 1650</option>
+                                    <option value="RTX 3050">RTX 3050</option>
+                                    <option value="RX 580">RX 580</option>
+                                </select>
+
+                                <label>GPU Integrada</label>
+                                <select name="ComputadoraActual.TieneGPUIntegrada">
+                                    <option value="true">Sí</option>
+                                    <option value="false">No</option>
+                                </select>
+
+                                <label>Precio</label>
+                                <input name="ComputadoraActual.Precio" type="number" min="100000" step="10000" required />
+
+                                <label>Tipo de Uso</label>
+                                <select name="ComputadoraActual.TipoRecomendado">
+                                    <option value="1">Básico</option>
+                                    <option value="2">Estudiante</option>
+                                    <option value="3">Programador</option>
+                                    <option value="4">Diseñador</option>
+                                    <option value="5">Editor de Video</option>
+                                    <option value="6">Técnico Avanzado</option>
+                                    <option value="7">Gamer</option>
+                                </select>
+
+                                <div class="button">
+                                    <button type="submit">Guardar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <script>
+                function abrirModal() {
+                    document.getElementById('AgregarModal').classList.remove('hidden');
+                }
+
+                function cerrarModal() {
+                    document.getElementById('AgregarModal').classList.add('hidden');
+                }
+            </script>
+
 
             @if (TempData["Mensaje"] != null)
             {
@@ -105,7 +212,7 @@
                                 <th>Almacenamiento</th>
                                 <th>Precio</th>
                                 <th>Acciones</th>
-                                
+
                             </tr>
                         </thead>
                         <tbody id="computers-table-body">
@@ -149,138 +256,6 @@
         </section>
     </main>
 
-    <!-- Modal para agregar computador -->
-    <div id="computer-modal" class="modal hidden">
-        <div class="modal_content">
-            <span id="close-computer-modal" class="close">&times;</span>
-            <h2 id="modal-title" style="padding: 20px 20px 0 20px; color: white; font-family: 'Coolvetica', sans-serif; font-weight: lighter;">Agregar Nuevo Computador</h2>
-            <div class="modal_body">
-                <form asp-action="Create" method="post">
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.Marca"></label>
-                        <input asp-for="ComputadoraActual.Marca" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.Marca" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.Modelo"></label>
-                        <input asp-for="ComputadoraActual.Modelo" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.Modelo" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.TipoDispositivo"></label>
-                        <select asp-for="ComputadoraActual.TipoDispositivo" class="form-control" asp-items="Html.GetEnumSelectList<codex.Models.TipoDispositivo>()"></select>
-                        <span asp-validation-for="ComputadoraActual.TipoDispositivo" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.Procesador"></label>
-                        <input asp-for="ComputadoraActual.Procesador" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.Procesador" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.GeneracionCPU"></label>
-                        <input asp-for="ComputadoraActual.GeneracionCPU" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.GeneracionCPU" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.MemoriaRam"></label>
-                        <input asp-for="ComputadoraActual.MemoriaRam" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.MemoriaRam" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.TipoRam"></label>
-                        <input asp-for="ComputadoraActual.TipoRam" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.TipoRam" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.AlmacenamientoPrincipal"></label>
-                        <input asp-for="ComputadoraActual.AlmacenamientoPrincipal" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.AlmacenamientoPrincipal" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.AlmacenamientoSecundario"></label>
-                        <input asp-for="ComputadoraActual.AlmacenamientoSecundario" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.AlmacenamientoSecundario" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.TarjetaGrafica"></label>
-                        <input asp-for="ComputadoraActual.TarjetaGrafica" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.TarjetaGrafica" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group form-check">
-                        <input asp-for="ComputadoraActual.TieneGPUIntegrada" class="form-check-input" />
-                        <label asp-for="ComputadoraActual.TieneGPUIntegrada" class="form-check-label"></label>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.PantallaPulgadas"></label>
-                        <input asp-for="ComputadoraActual.PantallaPulgadas" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.PantallaPulgadas" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.ResolucionVertical"></label>
-                        <input asp-for="ComputadoraActual.ResolucionVertical" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.ResolucionVertical" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.ResolucionHorizontal"></label>
-                        <input asp-for="ComputadoraActual.ResolucionHorizontal" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.ResolucionHorizontal" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.Puertos"></label>
-                        <input asp-for="ComputadoraActual.Puertos" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.Puertos" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.Conectividad"></label>
-                        <input asp-for="ComputadoraActual.Conectividad" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.Conectividad" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.Precio"></label>
-                        <input asp-for="ComputadoraActual.Precio" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.Precio" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.ImagenUrl"></label>
-                        <input asp-for="ComputadoraActual.ImagenUrl" class="form-control" />
-                        <span asp-validation-for="ComputadoraActual.ImagenUrl" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.TipoRecomendado"></label>
-                        <select asp-for="ComputadoraActual.TipoRecomendado" class="form-control" asp-items="Html.GetEnumSelectList<codex.Models.TipoUso>()"></select>
-                        <span asp-validation-for="ComputadoraActual.TipoRecomendado" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="ComputadoraActual.Descripcion"></label>
-                        <textarea asp-for="ComputadoraActual.Descripcion" class="form-control"></textarea>
-                        <span asp-validation-for="ComputadoraActual.Descripcion" class="text-danger"></span>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Crear</button>
-                </form>
-
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -315,7 +290,7 @@
     </footer>
     <script src="@Url.Content("~/js/main.js")"></script>
     <script src="@Url.Content("~/js/admin.js")"></script>
-    
-    
+
+
 </body>
 </html>
