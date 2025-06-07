@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// CONFIGURACIÓN DE LA BASE DE DATOS
+// CONFIGURACIï¿½N DE LA BASE DE DATOS
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// CONFIGURACIÓN DE IDENTITY
+// CONFIGURACIï¿½N DE IDENTITY
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 {
     options.SignIn.RequireConfirmedAccount = false;
@@ -40,7 +40,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Recomendacion}/{action=Formulario}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapRazorPages();
 
@@ -51,5 +51,5 @@ using (var scope = app.Services.CreateScope())
     codex.Data.Seeders.DbInitializer.Inicializar(context);
 }
 
-// Iniciar la aplicación
+// Iniciar la aplicaciï¿½n
 app.Run();

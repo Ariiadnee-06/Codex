@@ -9,67 +9,69 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = codex
 build_property.RootNamespace = codex
-build_property.ProjectDir = C:\Users\LENOVO\Documents\Codex\codex\
+build_property.ProjectDir = C:\Users\velas\Codex\codex\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\LENOVO\Documents\Codex\codex
+build_property.MSBuildProjectDirectory = C:\Users\velas\Codex\codex
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/velas/Codex/codex/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Views/Admin/admin.cshtml]
+[C:/Users/velas/Codex/codex/Views/Admin/admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cYWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Views/Auth/auth.cshtml]
+[C:/Users/velas/Codex/codex/Views/Auth/auth.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxhdXRoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Views/Favoritos/favoritos.cshtml]
+[C:/Users/velas/Codex/codex/Views/Favoritos/favoritos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3JpdG9zXGZhdm9yaXRvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Views/Home/Index.cshtml]
+[C:/Users/velas/Codex/codex/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Views/Home/Privacy.cshtml]
+[C:/Users/velas/Codex/codex/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Views/Recomendacion/Formulario.cshtml]
+[C:/Users/velas/Codex/codex/Views/Recomendacion/Formulario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjb21lbmRhY2lvblxGb3JtdWxhcmlvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Views/Recomendacion/Resultado.cshtml]
+[C:/Users/velas/Codex/codex/Views/Recomendacion/Resultado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjb21lbmRhY2lvblxSZXN1bHRhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Views/Shared/Error.cshtml]
+[C:/Users/velas/Codex/codex/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/velas/Codex/codex/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/velas/Codex/codex/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Views/_ViewImports.cshtml]
+[C:/Users/velas/Codex/codex/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Views/_ViewStart.cshtml]
+[C:/Users/velas/Codex/codex/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/LENOVO/Documents/Codex/codex/Views/Shared/_Layout.cshtml]
+[C:/Users/velas/Codex/codex/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-17p4r5sstj

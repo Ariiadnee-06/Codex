@@ -56,9 +56,16 @@
     <main class="admin-main">
         <section class="admin-container">
             <div class="admin-header">
-                <h1 class="Titulo">Panel de Administración</h1>
-                <button class="admin-button" id="openAddModal">Agregar Computador</button>
+                <h2>Gestión de Computadores</h2>
+                <button id="add-computer-button" class="add-button">Agregar Computador</button>
             </div>
+
+            @if (TempData["Mensaje"] != null)
+            {
+                <div class="alert-message" style="background-color: #0E021F; color: white; padding: 15px; margin: 15px 0; border-radius: 10px; font-family: 'Coolvetica', sans-serif; text-align: center; animation: fadeOut 3s forwards;">
+                    @TempData["Mensaje"]
+                </div>
+            }
 
             <div class="admin-tabs">
                 <button class="tab-button active" data-tab="computadores">Computadores</button>
@@ -104,14 +111,14 @@
                         <tbody id="computers-table-body">
                             @foreach (var compu in Model.Computadoras)
                             {
-                                <form asp-action="Editar" asp-route-id="@compu.Id" method="post" onsubmit="return confirm('¿Seguro que quieres cambiar el componene?');">
+                                <form asp-action="Editar" asp-route-id="@compu.Id" method="post" onsubmit="return confirm('¿Seguro que quieres cambiar el componente?');">
                                 <tr>
-                                    <td><input name="Marca" value="@compu.Marca" class="form-control" /></td>
-                                    <td><input name="Modelo" value="@compu.Modelo" class="form-control" /></td>
-                                    <td><input name="Procesador" value="@compu.Procesador" class="form-control" /></td>
-                                    <td><input name="MemoriaRam" value="@compu.MemoriaRam" class="form-control" /></td>
-                                    <td><input name="AlmacenamientoPrincipal" value="@compu.AlmacenamientoPrincipal" class="form-control" /></td>
-                                    <td><input name="Precio" type="number" value="@compu.Precio" class="form-control" step="0.01" /></td>
+                                    <td><input name="nuevaCompu.Marca" value="@compu.Marca" class="form-control" /></td>
+                                    <td><input name="nuevaCompu.Modelo" value="@compu.Modelo" class="form-control" /></td>
+                                    <td><input name="nuevaCompu.Procesador" value="@compu.Procesador" class="form-control" /></td>
+                                    <td><input name="nuevaCompu.MemoriaRam" value="@compu.MemoriaRam" class="form-control" /></td>
+                                    <td><input name="nuevaCompu.AlmacenamientoPrincipal" value="@compu.AlmacenamientoPrincipal" class="form-control" /></td>
+                                    <td><input name="nuevaCompu.Precio" type="text" value="@compu.Precio.ToString("C")" class="form-control" /></td>
                                     <td>
                                         <button type="submit" class="action-button edit-button">Editar</button>
                                         <form asp-action="Delete" asp-route-id="@compu.Id" method="post" style="display:inline" onsubmit="return confirm('¿Seguro que quieres eliminar?');">
@@ -120,7 +127,6 @@
                                     </td>
                                 </tr>
                                 </form>
-                                
                             }
 
                         </tbody>

@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\",
+  "WorkspaceRootPath": "C:\\Users\\velas\\Codex\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|d:\\universidad\\2025\\ingenieria de software 1\\final\\codex-original\\codex\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|d:\\universidad\\2025\\ingenieria de software 1\\final\\codex-original\\codex\\views\\recomendacion\\formulario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\views\\recomendacion\\formulario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\views\\recomendacion\\formulario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|d:\\universidad\\2025\\ingenieria de software 1\\final\\codex-original\\codex\\data\\seeders\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\data\\seeders\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\data\\seeders\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|d:\\universidad\\2025\\ingenieria de software 1\\final\\codex-original\\codex\\controllers\\recomendacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|c:\\users\\velas\\codex\\codex\\controllers\\recomendacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BAD572C-C31C-4BE8-BBCC-F91D6E465AA0}|codex\\codex.csproj|solutionrelative:codex\\controllers\\recomendacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,45 +26,39 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "DbInitializer.cs",
-              "DocumentMoniker": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Data\\Seeders\\DbInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Data\\Seeders\\DbInitializer.cs",
               "RelativeDocumentMoniker": "codex\\Data\\Seeders\\DbInitializer.cs",
-              "ToolTip": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Data\\Seeders\\DbInitializer.cs",
+              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Data\\Seeders\\DbInitializer.cs",
               "RelativeToolTip": "codex\\Data\\Seeders\\DbInitializer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T23:09:51.009Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T23:09:51.009Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Formulario.cshtml",
-              "DocumentMoniker": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Views\\Recomendacion\\Formulario.cshtml",
+              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Views\\Recomendacion\\Formulario.cshtml",
               "RelativeDocumentMoniker": "codex\\Views\\Recomendacion\\Formulario.cshtml",
-              "ToolTip": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Views\\Recomendacion\\Formulario.cshtml",
+              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Views\\Recomendacion\\Formulario.cshtml",
               "RelativeToolTip": "codex\\Views\\Recomendacion\\Formulario.cshtml",
               "ViewState": "AgIAAH0AAAAAAAAAAAAwwI0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-05T22:39:39.381Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T22:39:39.381Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "codex\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "codex\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAHUAAAAAAAAAAAAcwIQAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -75,14 +69,13 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "RecomendacionController.cs",
-              "DocumentMoniker": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Controllers\\RecomendacionController.cs",
+              "DocumentMoniker": "C:\\Users\\velas\\Codex\\codex\\Controllers\\RecomendacionController.cs",
               "RelativeDocumentMoniker": "codex\\Controllers\\RecomendacionController.cs",
-              "ToolTip": "D:\\UNIVERSIDAD\\2025\\Ingenieria de Software 1\\Final\\Codex-original\\codex\\Controllers\\RecomendacionController.cs",
+              "ToolTip": "C:\\Users\\velas\\Codex\\codex\\Controllers\\RecomendacionController.cs",
               "RelativeToolTip": "codex\\Controllers\\RecomendacionController.cs",
               "ViewState": "AgIAAHwAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T00:25:15.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T00:25:15.019Z"
             }
           ]
         }
