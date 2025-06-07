@@ -204,6 +204,8 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 2000;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
     .modal.hidden {
@@ -283,6 +285,12 @@ body {
     .form_side form {
         display: flex;
         flex-direction: column;
+        max-width: 500px;
+        max-height: 80vh;
+        overflow-y: auto;
+        animation: fadeIn 0.3s ease-in-out;
+        scrollbar-width: thin;
+        scrollbar-color: #f0f0f0 #1c1130;
     }
 
     .form_side label {
@@ -301,6 +309,7 @@ body {
         font-family: "Lined";
         font-size: 20px;
         outline: none;
+        margin-left: 10px;
     }
 
 .button {
