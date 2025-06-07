@@ -223,26 +223,31 @@
                             </tr>
                         </thead>
                         <tbody id="computers-table-body">
+                        <tbody id="computers-table-body">
                             @foreach (var compu in Model.Computadoras)
                             {
-                                <form asp-action="Editar" asp-route-id="@compu.Id" method="post" onsubmit="return confirm('¿Seguro que quieres cambiar el componente?');">
                                 <tr>
+                                    <form asp-action="Editar" asp-route-id="@compu.Id" method="post" onsubmit="return confirm('¿Seguro que quieres cambiar el componente?');">
                                     <td><input name="nuevaCompu.Marca" value="@compu.Marca" class="form-control" /></td>
                                     <td><input name="nuevaCompu.Modelo" value="@compu.Modelo" class="form-control" /></td>
                                     <td><input name="nuevaCompu.Procesador" value="@compu.Procesador" class="form-control" /></td>
                                     <td><input name="nuevaCompu.MemoriaRam" value="@compu.MemoriaRam" class="form-control" /></td>
                                     <td><input name="nuevaCompu.AlmacenamientoPrincipal" value="@compu.AlmacenamientoPrincipal" class="form-control" /></td>
-                                    <td><input name="nuevaCompu.Precio" type="number" step="1000" value="@compu.Precio.ToString("F0", CultureInfo.InvariantCulture)" class="form-control" />
-</td>
-                                    <td>
+                                    <td><input name="nuevaCompu.Precio" type="number" step="1000" value="@compu.Precio.ToString("F0", CultureInfo.InvariantCulture)" class="form-control" /></td>
+                                    <td style="white-space: nowrap;">
                                         <button type="submit" class="action-button edit-button">Editar</button>
-                                        <form asp-action="Delete" asp-route-id="@compu.Id" method="post" style="display:inline" onsubmit="return confirm('¿Seguro que quieres eliminar?');">
+                                    </td>
+                                    </form>
+
+                                    <td style="white-space: nowrap;">
+                                        <form asp-action="Delete" asp-route-id="@compu.Id" method="post" onsubmit="return confirm('¿Seguro que quieres eliminar?');" style="display:inline;">
                                             <button type="submit" class="action-button delete-button">Eliminar</button>
                                         </form>
                                     </td>
                                 </tr>
-                                </form>
                             }
+                        </tbody>
+
 
                         </tbody>
                     </table>
@@ -277,6 +282,7 @@
                 <h2>Conexiones</h2>
                 <ul>
                     <a href="@Url.Action("Index", "Home")" class="nav_logo">Codex</a>
+
                     <li><a href="#">Servicios</a></li>
                     <li><a href="#">Sobre nosotros</a></li>
                 </ul>
