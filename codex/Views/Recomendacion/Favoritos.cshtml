@@ -1,47 +1,18 @@
-﻿@model List<codex.Models.Computadora>
 @{
-    ViewData["Title"] = "Recomendaciones para ti";
+    ViewData["Title"] = "Mis Favoritos";
 }
 
 <div class="container py-4 resultado-bg">
     <h2 class="text-center mb-4 resultado-title">@ViewData["Title"]</h2>
 
-    @if (!Model.Any())
-    {
-        <div class="alert alert-info text-center resultado-alert" role="alert">
-            <i class="fas fa-info-circle me-2"></i>
-            No encontramos computadoras que coincidan con tus respuestas. Intenta ajustar el presupuesto o necesidades.
-        </div>
-    }
-    else
-    {
-        <div class="row g-4">
-            @foreach (var item in Model)
-            {
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm resultado-card">
-                        <div class="position-relative">
-                            <img src="@item.ImagenUrl" class="card-img-top p-3 resultado-img" alt="Imagen de @item.Modelo" />
-                            <button class="btn-favorito" onclick="toggleFavorito('@item.Id', '@item.Marca @item.Modelo', '@item.ImagenUrl', '@item.Precio.ToString(System.Globalization.CultureInfo.InvariantCulture)', '@item.Descripcion')">
-                                <i class="fas fa-star"></i>
-                            </button>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title resultado-card-title">@item.Marca @item.Modelo</h5>
-                            <p class="card-text flex-grow-1 resultado-desc">@item.Descripcion</p>
-                            <div class="mt-auto">
-                                <p class="card-text">
-                                    <span class="badge resultado-precio">
-                                        @item.Precio.ToString("C0", new System.Globalization.CultureInfo("es-CO"))
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    }
+    <div id="favoritos-container" class="row g-4">
+        <!-- Los favoritos se cargarán dinámicamente aquí -->
+    </div>
+
+    <div id="no-favoritos" class="alert alert-info text-center resultado-alert d-none" role="alert">
+        <i class="fas fa-info-circle me-2"></i>
+        No tienes computadoras favoritas guardadas.
+    </div>
 </div>
 
 <style>
@@ -152,39 +123,62 @@
 </style>
 
 <script>
-    function toggleFavorito(id, nombre, imagen, precio, descripcion) {
+    function cargarFavoritos() {
+        const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+        const container = document.getElementById('favoritos-container');
+        const noFavoritos = document.getElementById('no-favoritos');
+        
+        if (favoritos.length === 0) {
+            container.innerHTML = '';
+            noFavoritos.classList.remove('d-none');
+            return;
+        }
+        
+        noFavoritos.classList.add('d-none');
+        container.innerHTML = favoritos.map(fav => `
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm resultado-card">
+                    <div class="position-relative">
+                        <img src="${fav.imagen}" class="card-img-top p-3 resultado-img" alt="Imagen de ${fav.nombre}" />
+                        <button class="btn-favorito activo" onclick="toggleFavorito('${fav.id}', '${fav.nombre}', '${fav.imagen}', '${fav.precio}')">
+                            <i class="fas fa-star"></i>
+                        </button>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title resultado-card-title">${fav.nombre}</h5>
+                        <div class="mt-auto">
+                            <p class="card-text">
+                                <span class="badge resultado-precio">
+                                    ${new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(fav.precio)}
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function toggleFavorito(id, nombre, imagen, precio) {
         let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
         const index = favoritos.findIndex(f => f.id === id);
         
         if (index === -1) {
-            // Agregar a favoritos
             favoritos.push({
                 id: id,
                 nombre: nombre,
                 imagen: imagen,
-                precio: parseFloat(precio),
-                descripcion: descripcion,
+                precio: precio,
                 fecha: new Date().toISOString()
             });
             mostrarNotificacion('Agregado a favoritos');
         } else {
-            // Quitar de favoritos
             favoritos.splice(index, 1);
             mostrarNotificacion('Quitado de favoritos');
         }
         
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
-        actualizarBotonFavorito(id);
-    }
-
-    function actualizarBotonFavorito(id) {
-        const boton = document.querySelector(`[onclick="toggleFavorito('${id}'"]`);
-        const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
-        const esFavorito = favoritos.some(f => f.id === id);
-        
-        if (boton) {
-            boton.classList.toggle('activo', esFavorito);
-        }
+        cargarFavoritos();
     }
 
     function mostrarNotificacion(mensaje) {
@@ -212,9 +206,6 @@
         }, 2000);
     }
 
-    // Inicializar estado de botones
-    document.addEventListener('DOMContentLoaded', () => {
-        const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
-        favoritos.forEach(fav => actualizarBotonFavorito(fav.id));
-    });
-</script>
+    // Cargar favoritos al iniciar la página
+    document.addEventListener('DOMContentLoaded', cargarFavoritos);
+</script> 
